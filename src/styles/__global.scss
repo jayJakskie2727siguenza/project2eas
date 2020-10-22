@@ -1,0 +1,26 @@
+// font-family: "Poppins", sans-serif;
+
+html {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+
+  font-size: 13px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: calc(100vh - 100px);
+
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+}

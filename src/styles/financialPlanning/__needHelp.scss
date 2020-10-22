@@ -1,0 +1,10 @@
+.needHelp {
+  padding: 28px 28px 28px 26px;
+  background-color: #f9f9f9;
+  border: 1px solid $border;
+  &__wrapper {
+    &--p {
+      color: $text100;
+    }
+  }
+}

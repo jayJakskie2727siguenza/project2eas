@@ -1,0 +1,38 @@
+// .financialPlanning1 {
+//   &__div2 {
+//   }
+// }
+
+@media (max-width: 1017px) {
+  .financialPlanning1 {
+    &__div2 {
+      &--list1 {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .financialPlanning1 {
+    &__div2 {
+      &--list1 {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 795px) {
+  .financialPlanning1 {
+    &__div2 {
+      flex-direction: column;
+      &--list1 {
+        margin-bottom: 40px;
+      }
+      &--list2 {
+        padding-left: 20px;
+      }
+    }
+  }
+}

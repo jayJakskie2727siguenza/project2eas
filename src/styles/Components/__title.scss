@@ -1,0 +1,60 @@
+.contentTitle {
+  font-family: "Poppins", sans-serif;
+  &--title {
+    position: relative;
+    text-align: left;
+    padding-left: 21px;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 40px;
+    font-family: sans-serif;
+  }
+  &--title::before {
+    content: "";
+    position: absolute;
+    border: 2px solid $primary;
+    height: 86%;
+    top: 5px;
+    left: 0px;
+  }
+  &--subtitle {
+    font-size: 18px;
+  }
+}
+
+.section__title {
+  text-align: center;
+
+  margin: 0 auto 5rem auto;
+  &--heading {
+    font-size: 26px;
+    line-height: 35px;
+    width: 38%;
+    margin: 0 auto;
+    font-weight: 800;
+    color: $primary;
+  }
+  &--subheading {
+    width: 58%;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .section__title {
+    &--heading {
+      width: 80%;
+    }
+    &--subheading {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .contentTitle {
+    &--title {
+      font-size: 2.5rem;
+    }
+  }
+}

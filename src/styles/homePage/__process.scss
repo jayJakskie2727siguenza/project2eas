@@ -1,0 +1,21 @@
+.process {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    &--item {
+      text-align: center;
+      &--title {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .process {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+}

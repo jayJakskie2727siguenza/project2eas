@@ -1,0 +1,15 @@
+.mainSection {
+  &--1 {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 910px) {
+  .mainSection {
+    &--1 {
+      flex-direction: column-reverse;
+    }
+  }
+}
