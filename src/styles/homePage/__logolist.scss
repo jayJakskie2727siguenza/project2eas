@@ -1,0 +1,72 @@
+.logolist {
+  &__wrapperSlider {
+    padding: 10px;
+    position: relative;
+    // width: 100%;
+    height: 138px;
+
+    box-shadow: inset 0px 0px 10px 1px $backgroundShade,
+      inset 0px 0px 10px 1px $backgroundShade,
+      inset 0px 0px 10px 1px $backgroundShade,
+      inset 0px 0px 10px 1px $backgroundShade;
+  }
+
+  &__wrapper {
+    &--h2 {
+      color: $primary;
+    }
+
+    &--div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      align-items: center;
+
+      transition: 0.8s;
+      padding: 10px;
+
+      list-style: none;
+
+      &--imgWrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70px;
+        height: 70px;
+        padding: 5px;
+        &--img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &--div4 {
+      &--imgWrapper {
+        &--2 {
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .logolist {
+    &__wrapperSlider {
+      height: 160px;
+    }
+  }
+}
+
+@media (max-width: 524px) {
+  .logolist {
+    &__wrapperSlider {
+      height: 355px;
+    }
+  }
+}

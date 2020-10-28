@@ -1,0 +1,85 @@
+.quickContact {
+  padding: 26px 18px 15px 15px;
+  border: 1px solid $border;
+  &__h2 {
+    padding-left: 14px;
+    margin-bottom: 20px;
+  }
+  &__form {
+    &--form {
+      padding: 0px 10px;
+      margin-bottom: 13px;
+    }
+
+    &--name {
+      &--text {
+        border: 1px solid $border;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    }
+    &--email {
+      &--email {
+        border: 1px solid $border;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    }
+    &--tel {
+      &--tel {
+        border: 1px solid $border;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    }
+    &--subject {
+      &--subject {
+        border: 1px solid $border;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    }
+    &--select {
+      &--service {
+        color: $text200;
+        border: 1px solid $border;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding-left: 10px;
+      }
+    }
+    &--message {
+      &--message {
+        border: 1px solid $border;
+        width: 100%;
+        font-size: 14px;
+        padding-left: 10px;
+        resize: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .quickContact {
+    padding: 26px 18px 15px 5px;
+  }
+}
+@media (max-width: 880px) {
+  .quickContact {
+    &__form {
+      &--name {
+        width: 100%;
+      }
+    }
+  }
+}

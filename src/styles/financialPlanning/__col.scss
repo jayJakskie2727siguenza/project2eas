@@ -1,0 +1,21 @@
+.col1 {
+  //   flex-grow: 1;
+  width: 390px;
+}
+.col2 {
+  //   flex-grow: 3;
+  font-size: 15px;
+  width: 100%;
+}
+
+@media (max-width: 930px) {
+  .col2 {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 880px) {
+  .col1 {
+    width: 100%;
+  }
+}

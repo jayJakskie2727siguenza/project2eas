@@ -1,0 +1,22 @@
+.financialPlanning3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+
+  &__analyze {
+    border: 1px solid $border;
+    padding: 22px 30px;
+  }
+
+  &__strategies {
+    border: 1px solid $border;
+    padding: 22px 30px;
+  }
+}
+
+@media (max-width: 630px) {
+  .financialPlanning3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}

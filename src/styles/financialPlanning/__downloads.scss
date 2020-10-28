@@ -1,0 +1,46 @@
+.downloads {
+  padding: 28px 28px 8px 26px;
+  border: 1px solid $border;
+  background-color: #f9f9f9;
+  &__wrapper {
+    &--img1 {
+      background-image: url("../images/pdf-1.jpg");
+      width: 27px;
+      height: 27px;
+    }
+    &--p1 {
+      color: $text100;
+      padding: 0px 0px 9px 0px;
+      line-height: 20px;
+    }
+
+    &--img2 {
+      background-image: url("../images/pdf-1.jpg");
+      width: 27px;
+      height: 27px;
+    }
+    &--p2 {
+      color: $text100;
+      padding: 0px 0px 9px 0px;
+      line-height: 20px;
+    }
+
+    &--divFlex {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 985px) {
+  .downloads {
+    padding: 28px 10px 8px 26px;
+    &__wrapper {
+      &--p1 {
+        margin-left: 10px;
+      }
+      &--p2 {
+        margin-left: 10px;
+      }
+    }
+  }
+}

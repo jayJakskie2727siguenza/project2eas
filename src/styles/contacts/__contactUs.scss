@@ -1,0 +1,137 @@
+.contactUs {
+  margin-top: 4rem;
+  &__wrapper {
+    justify-content: center;
+    height: 340px;
+    &--map {
+      width: 100%;
+    }
+  }
+  &__col1 {
+    box-shadow: 0px 0px 35px 1px $border;
+    padding: 15px 46px;
+    width: 790px;
+    text-align: center;
+    line-height: 32px;
+    &--h2 {
+      font-size: 36px;
+    }
+    &--p {
+      font-size: 15px;
+    }
+    &--input {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      column-gap: 10px;
+
+      &--fName {
+        border: 1px solid #e0e0e0;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+
+      &--cEmail {
+        border: 1px solid #e0e0e0;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+      &--cTel {
+        border: 1px solid #e0e0e0;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+      &--cCompany {
+        border: 1px solid #e0e0e0;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+      &--cSubject {
+        border: 1px solid #e0e0e0;
+        width: 100%;
+        height: 39px;
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+      &--cTextareaDiv {
+        grid-column: 1 / span 2;
+        height: 120px;
+        &--cTextarea {
+          border: 1px solid #e0e0e0;
+          width: 100%;
+          height: 100%;
+          font-size: 14px;
+          padding: 6px 10px;
+
+          resize: none;
+        }
+      }
+    }
+  }
+
+  &__col2 {
+    text-align: center;
+    padding: 70px 5px;
+    &--h2 {
+      font-size: 40px;
+
+      line-height: 40px;
+    }
+    &--p {
+      font-size: 20px;
+      &--p1 {
+        font-weight: 900;
+        word-spacing: 5px;
+        font-size: 30px;
+        line-height: 35px;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .contactUs {
+    &__col1 {
+      width: 600px;
+      &--input {
+        grid-template-columns: 1fr;
+        &--cTextareaDiv {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 815px) {
+  .contactUs {
+    display: block;
+    &__col1 {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 685px) {
+  .contactUs {
+    &__col1 {
+      line-height: 40px;
+    }
+  }
+}
+@media (max-width: 430px) {
+  .contactUs {
+    &__col1 {
+      padding: 50px 20px;
+    }
+  }
+}

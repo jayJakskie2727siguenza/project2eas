@@ -1,0 +1,74 @@
+.blog {
+  background: url("../images/demo-eleven-background-work.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+
+    &--item {
+      border: 1px solid $border;
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &--imgWrapper {
+        height: 120px;
+        overflow: hidden;
+      }
+
+      &--title {
+        font-size: 17px;
+        color: $primary;
+      }
+      &--description {
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        color: $text100;
+      }
+      &--link {
+        color: $text100;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .blog {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+}
+
+@media (max-width: 662px) {
+  .blog {
+    &__list {
+      &--item {
+        &--imgWrapper {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 368px) {
+  .blog {
+    &__list {
+      &--item {
+        &--imgWrapper {
+          height: 120px;
+        }
+      }
+    }
+  }
+}

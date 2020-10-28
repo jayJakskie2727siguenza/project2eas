@@ -1,0 +1,100 @@
+.banner {
+  background-image: url("../images/about-us.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__wrapper {
+    &--main {
+      h1 {
+        font-weight: 800;
+        font-size: 32px;
+        padding-left: 12px;
+        border-left: 3px solid $primary;
+        line-height: 30px;
+      }
+    }
+    &--submain {
+      font-family: Rubik;
+      text-transform: uppercase;
+      line-height: 18px;
+      letter-spacing: 1px;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 12px;
+      // &--mainpage {
+      // }
+      // &--icon {
+      // }
+      // &--subpage {
+      // }
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .banner {
+    &__wrapper {
+      padding: 25px 0px;
+      &--main {
+        margin-bottom: 20px;
+        h1 {
+          font-size: 29px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 690px) {
+  .banner {
+    &__wrapper {
+      &--main {
+        background-color: rgba(230, 230, 230, 0.226);
+        width: 55%;
+      }
+    }
+  }
+}
+@media (max-width: 678px) {
+  .banner {
+    &__wrapper {
+      &--main {
+        width: 50%;
+        h1 {
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 398px) {
+  .banner {
+    &__wrapper {
+      &--main {
+        width: 55%;
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  .banner {
+    &__wrapper {
+      &--main {
+        width: 100%;
+        background: none;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .banner {
+    &__wrapper {
+      &--main {
+        width: 63%;
+        background-color: rgba(230, 230, 230, 0.226);
+      }
+    }
+  }
+}

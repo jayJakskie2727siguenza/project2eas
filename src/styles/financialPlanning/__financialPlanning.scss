@@ -1,0 +1,27 @@
+.financialPlanning {
+  &__wrapper {
+    &--div2 {
+      padding: 22px 25px 25px 25px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border: 2px solid $primary;
+        height: 86%;
+        top: 5px;
+        left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .financialPlanning {
+    &__wrapper {
+      &--div2 {
+        padding: 22px 10px 25px 25px;
+      }
+    }
+  }
+}
