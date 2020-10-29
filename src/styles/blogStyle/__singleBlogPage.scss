@@ -1,6 +1,6 @@
 .singlePage {
   display: grid;
-  grid-template-columns: 785px 235px;
+  grid-template-columns: 1fr 235px;
   &__col1 {
     &--user {
       &--date {
@@ -32,6 +32,22 @@
     &--search {
       padding: 23px 20px 23px 25px;
       border: 1px solid $border;
+
+      &--input {
+        &--button {
+          border-top: 1px solid $border;
+          border-right: 1px solid $border;
+          border-bottom: 1px solid $border;
+          border-left: none;
+          padding: 5px;
+        }
+
+        &--text {
+          border: 1px solid $border;
+          padding: 5px;
+          width: 100%;
+        }
+      }
     }
 
     &--recentPost {
@@ -47,6 +63,8 @@
         &--li {
           border-bottom: 1px solid $border;
           &--user {
+            padding: 5px;
+
             &--1 {
               &--imgwrapper {
                 width: 210px;
@@ -75,6 +93,55 @@
 
             &--date {
               color: $text200;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .singlePage {
+    grid-template-columns: 1fr 210px;
+  }
+}
+
+@media (max-width: 799px) {
+  .singlePage {
+    display: block;
+    &__col2 {
+      &--recentPost {
+        &--ul {
+          &--li {
+            &--user {
+              &--1 {
+                &--imgwrapper {
+                  height: 80px;
+                  margin-right: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .singlePage {
+    display: block;
+    &__col2 {
+      &--recentPost {
+        &--ul {
+          &--li {
+            &--user {
+              &--1 {
+                &--imgwrapper {
+                  height: 65px;
+                  margin-right: 20px;
+                }
+              }
             }
           }
         }

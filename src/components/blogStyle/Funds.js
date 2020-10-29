@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import fImg1 from '../../images/Hedge-Funds-This-Year-Explained-2.jpg'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
@@ -8,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Funds = () => {
+const Funds = ({ title }) => {
     return (
         <div
             className="mainSection__col2--blog dflex justify-content-between px-1 mb-4"
@@ -24,7 +25,7 @@ const Funds = () => {
                     </div>
                 </div>
                 <h3 className="contentTitle--subtitle mb-1 text-center">
-                    Hedge Funds This Year, Explained
+                    {title}
                 </h3>
                 <div className="mainSection__col2--blog--postWrapper mb-1 text-center">
                     <span className="mainSection__col2--blog--postWrapper--1">
@@ -51,9 +52,9 @@ const Funds = () => {
                 </div>
             </article>
             <div>
-                <button className="btn-warning">
-                    READ MORE
-                </button>
+                <Link to="/SingleBlogPage" className="mainSection__col2--blog--content--a">
+                    <button className="btn-warning">READ MORE</button>
+                </Link>
             </div>
         </div>
     )

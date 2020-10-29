@@ -115,10 +115,6 @@
       }
     }
   }
-
-  &__wrapper1 {
-    transition: max-height 1s linear;
-  }
 }
 
 .hide {
@@ -130,11 +126,13 @@
 
 .hide1 {
   max-height: 0px;
+  transition: max-height 0.6s;
 
   overflow: hidden;
 }
 .show1 {
   max-height: 1000px;
+  transition: max-height 0.7s;
 
   overflow: hidden;
   // transition: max-height 3s ease;

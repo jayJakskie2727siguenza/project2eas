@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Marketing = () => {
+const Marketing = ({ title }) => {
 
 
 
@@ -30,7 +30,7 @@ const Marketing = () => {
                     </div>
                 </div>
                 <h3 className="contentTitle--subtitle mb-1 text-center">
-                    Participate in staff meetings manage dedicated to marketing
+                    {title}
                 </h3>
                 <div className="mainSection__col2--blog--postWrapper mb-1 text-center">
                     <span className="mainSection__col2--blog--postWrapper--1">
@@ -57,10 +57,12 @@ const Marketing = () => {
                 </div>
             </article>
             <div>
-                <button className="btn-warning">
-                    <Link to="/SingleBlogPage">READ MORE</Link>
 
-                </button>
+                <Link to="/SingleBlogPage" className="mainSection__col2--blog--content--a">
+                    <button className="btn-warning">READ MORE</button>
+                </Link>
+
+
             </div>
         </div>
     )

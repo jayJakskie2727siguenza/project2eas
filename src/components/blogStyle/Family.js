@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import fImg1 from '../../images/Blog-pic-03-2.jpg'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
@@ -7,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Family = () => {
+const Family = ({ title }) => {
     return (
         <div
             className="mainSection__col2--blog dflex justify-content-between px-1 mb-4"
@@ -23,8 +24,7 @@ const Family = () => {
                     </div>
                 </div>
                 <h3 className="contentTitle--subtitle mb-1 text-center">
-                    Family Helping Family in The Wake of Hurricanes Harvey and
-                    Irma
+                    {title}
                 </h3>
                 <div className="mainSection__col2--blog--postWrapper mb-1 text-center">
                     <span className="mainSection__col2--blog--postWrapper--1">
@@ -50,9 +50,9 @@ const Family = () => {
                 </div>
             </article>
             <div>
-                <button className="btn-warning">
-                    READ MORE
-                </button>
+                <Link to="/SingleBlogPage" className="mainSection__col2--blog--content--a">
+                    <button className="btn-warning">READ MORE</button>
+                </Link>
             </div>
         </div>
     )

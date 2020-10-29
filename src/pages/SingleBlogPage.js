@@ -10,8 +10,8 @@ import SinglePageCol2 from '../components/blogStyle/SinglePageCol2'
 const SingleBlogPage = () => {
     return (
         <Layout>
-            <SEO title="Single Page" />
-            <Banner title="Single Page" />
+            <SEO title="News" />
+            <Banner title="News" subtitle="Jack" />
             <section className="singlePage container pb-2 ">
                 <SinglePageCol1 />
                 <SinglePageCol2 />

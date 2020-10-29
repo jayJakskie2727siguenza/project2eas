@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import mImg1 from '../../images/Transform-Customer-Experience-with-an-Intelligent-Client-Management-2-768x380.jpg'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
@@ -7,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Management = () => {
+const Management = ({ title }) => {
     return (
         <div
             className="mainSection__col2--blog dflex justify-content-between px-1 mb-4"
@@ -23,8 +24,7 @@ const Management = () => {
                     </div>
                 </div>
                 <h3 className="contentTitle--subtitle mb-1 text-center">
-                    Transform Customer Experience with an Intelligent Client
-                    Management
+                    {title}
                 </h3>
                 <div className="mainSection__col2--blog--postWrapper mb-1 text-center">
                     <span className="mainSection__col2--blog--postWrapper--1">
@@ -50,9 +50,9 @@ const Management = () => {
                 </div>
             </article>
             <div>
-                <button className="btn-warning">
-                    READ MORE
-                </button>
+                <Link to="/SingleBlogPage" className="mainSection__col2--blog--content--a">
+                    <button className="btn-warning">READ MORE</button>
+                </Link>
             </div>
         </div>
     )

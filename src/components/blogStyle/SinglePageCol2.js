@@ -1,7 +1,7 @@
 import React from 'react'
 import pImg1 from '../../images/Blog-pic-01-2.jpg'
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -9,10 +9,14 @@ const SinglePageCol2 = () => {
     return (
         <div className="singlePage__col2 pt-5 mt-1 px-1">
             <div className="singlePage__col2--search">
-                <h2 className="singlePage__col2--search--h2">SEARCH</h2>
-                <div className="singlePage__col2--search--input">
+                <h2 className="singlePage__col2--search--h2 mb-2">SEARCH</h2>
+                <div className="singlePage__col2--search--input dflex">
                     <input className="singlePage__col2--search--input--text" type="text" placeholder="Search ..." />
-                    <button className="singlePage__col2--search--input--button"><i>b</i></button>
+                    <button className="singlePage__col2--search--input--button">
+                        <i className="singlePage__col2--search--input--button--i far fa-search">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </i>
+                    </button>
                 </div>
 
             </div>

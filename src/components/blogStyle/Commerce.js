@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import cImg1 from '../../images/Winning-the-Race-for-Digital-Ecommerce-2.jpg'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
@@ -6,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const Commerce = () => {
+
+const Commerce = ({ title }) => {
     return (
         <div
             className="mainSection__col2--blog dflex justify-content-between dflex justify-content-between px-1 mb-4"
@@ -22,7 +24,7 @@ const Commerce = () => {
                     </div>
                 </div>
                 <h3 className="contentTitle--subtitle mb-1 text-center">
-                    Winning the Race for Digital Commerce
+                    {title}
                 </h3>
                 <div className="mainSection__col2--blog--postWrapper text-center mb-1">
                     <span className="mainSection__col2--blog--postWrapper--1">
@@ -48,9 +50,9 @@ const Commerce = () => {
                 </div>
             </article>
             <div>
-                <button className="btn-warning">
-                    READ MORE
-                </button>
+                <Link to="/SingleBlogPage" className="mainSection__col2--blog--content--a">
+                    <button className="btn-warning">READ MORE</button>
+                </Link>
             </div>
         </div>
     )
