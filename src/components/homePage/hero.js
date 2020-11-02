@@ -1,42 +1,87 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import { useStaticQuery, graphql } from 'gatsby'
 
 
 
+const getData = graphql`
+      {
+        wpgraph2eas {
+    pageBy(uri: "home") {
+      home_pagesection_acf {
+        sections {
+          hero {
+            backgroundImage {
+              bgImage:sourceUrl
+            }
+            buttons
+            headings
+            subheadings
+          }
+        }
+      }
+    }
+  }
+      }
+    `
 
-const hero = () => {
 
+const Hero = () => {
+
+  const {
+    wpgraph2eas: {
+      pageBy: {
+        home_pagesection_acf: {
+          sections: {
+            hero: {
+              backgroundImage: {
+                bgImage
+              },
+              buttons,
+              headings,
+              subheadings
+            }
+          }
+        }
+      }
+    }
+  } = useStaticQuery(getData)
+
+
+
+  const getBackgroundImage = {
+    backgroundImage: `url(${bgImage})`
+  }
 
 
   return (
-    <section className="hero">
+    <section className="hero" style={getBackgroundImage}>
       <div className="hero__contentWrapper dflex justify-content-end container">
         <div className="hero__content">
           <h1 className="hero__content--title">
-            Best Marketing Platform to Really Grow your Business
+            {headings}
           </h1>
 
           <p className="hero__content--subtitle">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam quis nostrud exercitation ullamco laboris
+            {subheadings}
           </p>
           <button className="btn btn-primary-outline hero__content--btn mt-4">
-            GET FREE CONSULTATION <i className="fas fa-long-arrow-alt-right">
+            {buttons}
+            <i className="fas fa-long-arrow-alt-right ml-1">
               <FontAwesomeIcon icon={faLongArrowAltRight} />
             </i>
           </button>
         </div>
       </div>
-    </section>
+    </section>)
 
 
 
-  )
+
 }
 
 
 
 
-export default hero
+export default Hero

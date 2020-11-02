@@ -10,11 +10,53 @@ import Image from '../image'
 
 const About = () => {
 
-    const dataAbout = useStaticQuery(graphql`
+    
+
+
+    const {
+        wpgraph2eas: {
+            pageBy:{
+                home_pagesection_acf :{
+                    sections: {
+                        about: {
+                            title1,
+                            title2,
+                            description1,
+                            description2
+                        }
+                    }
+                }
+            }
+},
+    demoElevenImageOne: {
+        childImageSharp:{
+            demoElevenImg1Fluid
+        }
+    },
+        demoElevenImageTwo: {
+    childImageSharp:{
+                demoElevenImg2Fluid
+    }
+}
+    } = useStaticQuery(graphql`
     {
+    wpgraph2eas {
+      pageBy(uri: "home") {
+        home_pagesection_acf {
+          sections {
+            about {
+              title1
+              title2
+              description1
+              description2
+            }
+          }
+        }
+      }
+    },
   demoElevenImageOne:file(relativePath:{eq:"demo-eleven-image01.jpg"}){
     childImageSharp{
-      fluid(maxWidth:630){
+      demoElevenImg1Fluid:fluid(maxWidth:630){
        
         ...GatsbyImageSharpFluid_noBase64
       }
@@ -22,7 +64,7 @@ const About = () => {
   },
   demoElevenImageTwo:file(relativePath:{eq:"demo-eleven-image02.jpg"}){
     childImageSharp{
-      fluid(maxWidth:630){
+       demoElevenImg2Fluid:fluid(maxWidth:630){
         
         ...GatsbyImageSharpFluid_noBase64
       }
@@ -32,23 +74,28 @@ const About = () => {
 }
     `)
 
+
+   
+
     return (
 
         <section className={`about container`}>
             <div className="about__item pr-2 pb-3">
                 <h2 className="about__item--title">
-                    Learn more about our history. It just might inspire you to help us
-                    build a better future.
-        </h2>
-                <p className="about__item--description mt-3">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+                    {title1 ? title1 : (<span>Learn more about our history. It just might inspire you to help us
+                    build a better future.(default)</span>)}
+                    {/* Learn more about our history. It just might inspire you to help us
+                    build a better future. */}
+                </h2>
+                <p className="about__item--description mt-3"  dangerouslySetInnerHTML={{__html:description1}} >
+                    {/* {description1 ? description1 : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
                     tempor incididunt ut labore et dolore.
-        </p>
-                <p className="about__item--description mt-3">
+
+
                     On the other hand, we denounce with righteous indignation and dislike
                     men who are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire.
-        </p>
+                    the moment, so blinded by desire.(default)</span>)} */}
+                </p>
             </div>
             <div className="about__item mb-2">
                 <div>
@@ -57,7 +104,7 @@ const About = () => {
                         src={pImg1}
                         alt="aboutImage1"
                     /> */}
-                    <Image picsFluid={dataAbout.demoElevenImageOne.childImageSharp.fluid} alt="aboutImage1" />
+                    <Image picsFluid={demoElevenImg1Fluid} alt="aboutImage1" />
                 </div>
             </div>
             <div className="about__item pt-3">
@@ -67,23 +114,23 @@ const About = () => {
                         src={pImg2}
                         alt="aboutImage2"
                     /> */}
-                    <Image picsFluid={dataAbout.demoElevenImageTwo.childImageSharp.fluid} alt="aboutImage2" />
+                    <Image picsFluid={demoElevenImg2Fluid} alt="aboutImage2" />
                 </div>
             </div>
             <div className="about__item px-3 pt-3">
                 <h2 className="about__item--title">
-                    We're knowledgeable about making benefits higher
+                    {title2 ? title2 : (<span>We're knowledgeable about making benefits higher(default)</span>)}
         </h2>
-                <p className="about__item--description mt-3">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+                <p className="about__item--description mt-3" dangerouslySetInnerHTML={{__html:description2}} >
+                    {/* {description2 ? description2 : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                     veniam.
-        </p>
-                <p className="about__item--description mt-3">
+                     
+                     
                     On the other hand, we denounce with righteous indignation and dislike
                     men who are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire.
-        </p>
+                    the moment, so blinded by desire.(default)</span>)} */}
+                </p>
             </div>
         </section>
 

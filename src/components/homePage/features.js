@@ -4,8 +4,8 @@ import React from 'react'
 import Image from '../image'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const Features = () => {
@@ -56,11 +56,11 @@ const Features = () => {
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Reprehenderit unde fuga numquam non optio!
                     </p>
-                    <a className="features__col--link" href="/"> READ MORE
+                    {/* <a className="features__col--link" href="/"> READ MORE
                     <i className="fas fa-arrow-right ml-1">
                             <FontAwesomeIcon icon={faArrowRight} />
                         </i>
-                    </a>
+                    </a> */}
                 </div>
             </div>
             <div className="features__col dflex justify-content-start py-3 px-2">
@@ -72,17 +72,18 @@ const Features = () => {
                     /> */}
                     <Image picsFixed={dataFeatures.demoElevenIconTwo.childImageSharp.fixed} className="features__col--img" alt="creative idea" />
                 </div>
+
                 <div>
                     <h2 className="features__col--title mb-1">Secured & Compliance</h2>
                     <p className="features__col--description my-2">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Reprehenderit unde fuga numquam non optio!
                     </p>
-                    <a className="features__col--link" href="/"> READ MORE
+                    {/* <a className="features__col--link" href="/"> READ MORE
                     <i className="fas fa-arrow-right ml-1">
                             <FontAwesomeIcon icon={faArrowRight} />
                         </i>
-                    </a>
+                    </a> */}
                 </div>
             </div>
             <div className="features__col dflex justify-content-start py-3 px-2">
@@ -100,11 +101,11 @@ const Features = () => {
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Reprehenderit unde fuga numquam non optio!
                     </p>
-                    <a className="features__col--link" href="/"> READ MORE
+                    {/* <a className="features__col--link" href="/"> READ MORE
                     <i className="fas fa-arrow-right ml-1">
                             <FontAwesomeIcon icon={faArrowRight} />
                         </i>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </section>

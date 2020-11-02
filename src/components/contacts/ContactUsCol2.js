@@ -1,14 +1,57 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-const contactUsCol2 = () => {
+
+const getData = graphql`
+{
+  wpgraph2eas {
+    pageBy(uri: "contact") {
+      contact_pagesection_acf {
+        
+        number
+        address
+        email
+       
+      }
+    }
+  }
+}
+`
+
+const ContactUsCol2 = () => {
+
+    const {
+
+        wpgraph2eas: {
+            pageBy: {
+                contact_pagesection_acf: {
+
+                    number,
+                    address,
+                    email
+
+                }
+            }
+        }
+
+    } = useStaticQuery(getData)
+
     return (
         <div className="contactUs__col2 mr-2">
             <h2 className="contactUs__col2--h2 mb-3">CONTACT US</h2>
-            <p className="contactUs__col2--p contactUs__col2--p--p1 mb-4"><a href="tel:+63 917 421 9688">+63 917 421 9688</a></p>
-            <p className="contactUs__col2--p contactUs__col2--p--p2 mb-4">21 Apple St., General Santos City, 9500 South Cotabato, Philippines</p>
-            <p className="contactUs__col2--p contactUs__col2--p--p3 mb-4">solutions.2eas@gmail.com</p>
+            <p className="contactUs__col2--p contactUs__col2--p--p1 mb-4"><a href="tel:+63 917 421 9688">+{number}</a></p>
+            <p className="contactUs__col2--p contactUs__col2--p--p2 mb-4">
+                {address ? address : (<span>21 Apple St., General Santos City, 9500 South Cotabato, Philippines (default)</span>)}
+                {/* 21 Apple St., General Santos City, 9500 South Cotabato, Philippines */}
+            </p>
+            <p className="contactUs__col2--p contactUs__col2--p--p3 mb-4">
+                {email ? email : (<span>
+                    solutions.2eas@gmail.com (default)
+                </span>)}
+                {/* solutions.2eas@gmail.com */}
+            </p>
         </div>
     )
 }
 
-export default contactUsCol2
+export default ContactUsCol2

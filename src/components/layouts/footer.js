@@ -1,13 +1,72 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook, faPhoneAlt, faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-import EASLogo from '../../images/2EAS-LOGO-Horizontal-Website-footer.png'
+// import EASLogo from '../../images/2EAS-LOGO-Horizontal-Website-footer.png'
 
+const getData = graphql`
+{
+   wpgraph2eas {
+    pageBy(uri: "footer") {
+      footer_pagesection_acf {
+        footer {
+          about {
+            image {
+              sourceUrl
+            }
+            description
+          }
+          address {
+            addHeading:heading
+            addAddress:address
+            addCell:cellphone
+            addTel:telephone
+            addEmail:email
+          }
+          subscribe {
+            subHeading:heading
+            subDes:description
+          }
+        }
+      }
+    }
+  }
+}
+`
 
+const Footer = () => {
 
-const footer = () => {
+  const {
+    wpgraph2eas: {
+      pageBy: {
+        footer_pagesection_acf: {
+          footer: {
+            about: {
+              image: {
+                sourceUrl
+              },
+              description
+            },
+            address: {
+              addHeading,
+              addAddress,
+              addCell,
+              addTel,
+              addEmail
+            },
+            subscribe: {
+              subHeading,
+              subDes
+            }
+          }
+        }
+      }
+    }
+  } = useStaticQuery(getData)
+
   return (
     <section>
 
@@ -16,10 +75,13 @@ const footer = () => {
         <div className="footer__list container">
           <div className="footer__list--about">
             <div className="footer__list--about--imgWrapper">
-              <img className="footer__list--about--imgWrapper--img" src={EASLogo} alt="2EAS-LOGO" />
+              <img className="footer__list--about--imgWrapper--img" src={sourceUrl} alt="2EAS-LOGO" />
             </div>
-            <p className="footer__list--about--p mb-1">We are an online accounting consultancy business specializing in Accounting & Taxation System in the Philippines since 2018.
-          </p>
+            <p className="footer__list--about--p mb-1">
+              {
+                description ? description : (<span>We are an online accounting consultancy business specializing in Accounting & Taxation System in the Philippines since 2018. (default)</span>)
+              }
+            </p>
             <div
               className="footer__social dflex justify-content-start align-items-center"
             >
@@ -63,25 +125,39 @@ const footer = () => {
           </div>
 
           <div className="footer__list--item">
-            <h2 className="footer__list--item--heading">Company Address</h2>
+            <h2 className="footer__list--item--heading">
+              {
+                addHeading ? addHeading : (<span>Company Address (default)</span>)
+              }
+            </h2>
             <ul className="list-unstyled">
               <li className="mb-1">
                 <address className="footer__list--item--address">
                   <i className="fas fa-map-marker-alt mr-1">
                     <FontAwesomeIcon icon={faAddressBook} />
                   </i>
-                21 Apple St., General Santos City, 9500 South Cotabato, Philippines
-              </address>
+                  {
+                    addAddress ? addAddress : (<span>21 Apple St., General Santos City, 9500 South Cotabato, Philippines (default)</span>)
+                  }
+                </address>
               </li>
               <li className="mb-1">
                 <p><i className="fas fa-phone-alt mr-1">
                   <FontAwesomeIcon icon={faPhoneAlt} />
-                </i> <a href="tel:(083) 227-1227" className="footer__list--item--a">(083) 227-1227</a> </p>
+                </i> <a href="tel:(083) 227-1227" className="footer__list--item--a">
+                    {
+                      addTel ? addTel : (<span>(083) 227-1227 (default)</span>)
+                    }
+                  </a> </p>
               </li>
               <li className="mb-1">
                 <p><i className="fas fa-mobile-alt mr-1">
                   <FontAwesomeIcon icon={faMobileAlt} />
-                </i> <a href="tel:+63 917 421 9688" className="footer__list--item--a"> +63 917 421 9688</a> </p>
+                </i> <a href="tel:+63 917 421 9688" className="footer__list--item--a">
+                    +{
+                      addCell ? addCell : (<span>63 917 421 9688 (default)</span>)
+                    }
+                  </a> </p>
               </li>
               <li>
                 <p>
@@ -89,18 +165,28 @@ const footer = () => {
                     <FontAwesomeIcon icon={faEnvelope} />
 
                   </i>
-                  <a href="mailto:solutions.2eas@gmail.com" className="footer__list--item--a"> solutions.2eas@gmail.com</a>
+                  <a href="mailto:solutions.2eas@gmail.com" className="footer__list--item--a">
+                    {
+                      addEmail ? addEmail : (<span>solutions.2eas@gmail.com (default)</span>)
+                    }
+                  </a>
                 </p>
               </li>
             </ul>
           </div>
 
           <div className="footer__list--item">
-            <h2 className="footer__list--item--heading">Newsletter</h2>
+            <h2 className="footer__list--item--heading">
+              {
+                subHeading ? subHeading : (<span>Newsletter (default)</span>)
+              }
+            </h2>
             <p className="mb-1">
-              Subscribe to our newsletter for discounts, specials, and more! We
-              value your privacy.
-          </p>
+              {
+                subDes ? subDes : (<span>Subscribe to our newsletter for discounts, specials, and more! We
+              value your privacy. (default)</span>)
+              }
+            </p>
             <div className="footer__list--item--submit dflex justify-content-between">
               <input
                 className="footer__list--item--submit--input"
@@ -120,4 +206,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

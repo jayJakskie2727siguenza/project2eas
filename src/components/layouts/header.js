@@ -127,7 +127,7 @@ export class Header extends Component {
                 </li>
                 <li className="nav__menu--list--item">
 
-                  <button className="nav__menu--list--item--button">Call Now</button>
+                  <a href="tel:+63 917 421 9688" ><button className="nav__menu--list--item--button">Call Now</button></a>
 
 
 

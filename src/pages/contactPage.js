@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import Layouts from '../components/layouts/layout'
 import MainFooter from '../components/layouts/Mainfooter'
 import '../styles/style.scss'
@@ -7,13 +8,36 @@ import SEO from '../components/seo'
 
 import { Banner, ContactUs } from '../components/contacts/contactsMain'
 
+const getData = graphql`
+{wpgraph2eas {
+    pageBy(uri: "contact") {
+      contact_pagesection_acf {
+        title
+       
+       
+      }
+    }
+  }}
+`
+
+const ContactPage = () => {
+
+    const {
+        wpgraph2eas: {
+            pageBy: {
+                contact_pagesection_acf: {
+                    title
 
 
-const contactPage = () => {
+                }
+            }
+        }
+    } = useStaticQuery(getData)
+
     return (
         <Layouts>
-            <SEO title="Contact Us" />
-            <Banner title="Contact Us" />
+            <SEO title={title} />
+            <Banner title={title} />
 
             <ContactUs />
             <MainFooter />
@@ -21,4 +45,4 @@ const contactPage = () => {
     )
 }
 
-export default contactPage
+export default ContactPage

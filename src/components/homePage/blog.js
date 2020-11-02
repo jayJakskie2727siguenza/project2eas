@@ -14,25 +14,62 @@ import Image from '../image'
 const Blog = () => {
 
 
-  const dataBlog = useStaticQuery(graphql`
-  {
+  const { wpgraph2eas: {
+    pageBy: {
+      home_pagesection_acf: {
+        sections: {
+          blog: {
+            title,
+            subtitle
+          }
+        }
+      }
+    }
+  },
+    caseStudyThree: {
+      childImageSharp: {
+        caseStudyThreeFluid
+      }
+    },
+    caseStudyTwo: {
+      childImageSharp: {
+        caseStudyTwoFluid
+      }
+    },
+    caseStudyOne: {
+      childImageSharp: {
+        caseStudyOneFluid
+      }
+    } } = useStaticQuery(graphql`
+  { wpgraph2eas {
+    pageBy(uri: "home") {
+      home_pagesection_acf {
+        sections {
+          blog {
+            title
+            subtitle
+          }
+        }
+      }
+    }
+  },
   caseStudyThree:file(relativePath:{eq:"case-study-img-three.jpg"}){
     childImageSharp{
-      fluid(maxWidth:360, jpegQuality:100){
+      caseStudyThreeFluid:fluid(maxWidth:360, jpegQuality:100){
         ...GatsbyImageSharpFluid_noBase64
       }
     }
   },
   caseStudyTwo:file(relativePath:{eq:"case-study-img-two.jpg"}){
     childImageSharp{
-      fluid(maxWidth:360, jpegQuality:100){
+    caseStudyTwoFluid:  fluid(maxWidth:360, jpegQuality:100){
          ...GatsbyImageSharpFluid_noBase64
       }
     }
   },
   caseStudyOne:file(relativePath:{eq:"case-study-img-one.jpg"}){
     childImageSharp{
-      fluid(maxWidth:360, jpegQuality:100){
+     caseStudyOneFluid: fluid(maxWidth:360, jpegQuality:100){
         ...GatsbyImageSharpFluid_noBase64
       }
     }
@@ -45,12 +82,16 @@ const Blog = () => {
     <section className={`blog`}>
       <div className="section__title">
         <h2 className="section__title--heading">
-          Explore Our Work
+          {title ? title : (<span>Explore Our Work(default)</span>)}
+          {/* Explore Our Work */}
         </h2>
         <p className="section__title--subheading">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+          {subtitle ? subtitle : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
           tempor incididunt ut labore et dolore. On the other hand we denounce
-          with righteous indignation and dislike men.
+          with righteous indignation and dislike men.(default)</span>)}
+          {/* Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+          tempor incididunt ut labore et dolore. On the other hand we denounce
+          with righteous indignation and dislike men. */}
         </p>
       </div>
       <div className="blog__list container">
@@ -69,7 +110,7 @@ const Blog = () => {
               src={pImg1}
               alt="case Study"
             /> */}
-            <Image picsFluid={dataBlog.caseStudyThree.childImageSharp.fluid} alt="case Study" />
+            <Image picsFluid={caseStudyThreeFluid} alt="case Study" />
           </div>
 
         </div>
@@ -89,7 +130,7 @@ const Blog = () => {
               alt="Customer Satisfaction"
             /> */}
 
-            <Image picsFluid={dataBlog.caseStudyTwo.childImageSharp.fluid} alt="Customer Satisfaction" />
+            <Image picsFluid={caseStudyTwoFluid} alt="Customer Satisfaction" />
 
           </div>
 
@@ -110,7 +151,7 @@ const Blog = () => {
               src={pImg3}
               alt="Bandora"
             /> */}
-            <Image picsFluid={dataBlog.caseStudyOne.childImageSharp.fluid} alt="Bandora" />
+            <Image picsFluid={caseStudyOneFluid} alt="Bandora" />
 
           </div>
 
@@ -131,7 +172,7 @@ const Blog = () => {
               src={pImg1}
               alt="case Study"
             /> */}
-            <Image picsFluid={dataBlog.caseStudyThree.childImageSharp.fluid} alt="case Study" />
+            <Image picsFluid={caseStudyThreeFluid} alt="case Study" />
           </div>
 
         </div>
@@ -151,7 +192,7 @@ const Blog = () => {
               alt="Customer Satisfaction"
             /> */}
 
-            <Image picsFluid={dataBlog.caseStudyTwo.childImageSharp.fluid} alt="Customer Satisfaction" />
+            <Image picsFluid={caseStudyTwoFluid} alt="Customer Satisfaction" />
 
           </div>
 
@@ -172,7 +213,7 @@ const Blog = () => {
               src={pImg3}
               alt="Bandora"
             /> */}
-            <Image picsFluid={dataBlog.caseStudyOne.childImageSharp.fluid} alt="Bandora" />
+            <Image picsFluid={caseStudyOneFluid} alt="Bandora" />
 
           </div>
 

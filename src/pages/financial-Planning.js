@@ -1,5 +1,8 @@
 import React from 'react'
 import '../styles/style.scss'
+
+import { graphql, useStaticQuery } from 'gatsby'
+
 import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
@@ -7,12 +10,34 @@ import SEO from "../components/seo"
 import { Banner, QuickContact, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning2, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
 
 
+const getData = graphql`
+{
+    wpgraph2eas {
+        pageBy(uri: "services") {
+            services_pagesection_acf {
+                title
+            }
+        }
+    }
+}
+`
 
-const financialPlanningPage = () => {
+const FinancialPlanningPage = () => {
+
+    const {
+        wpgraph2eas: {
+            pageBy: {
+                services_pagesection_acf: {
+                    title
+                }
+            }
+        }
+    } = useStaticQuery(getData)
+
     return (
         <Layout>
-            <SEO title="Services" />
-            <Banner title="Services" />
+            <SEO title={title} />
+            <Banner title={title} />
             <section className="main container pt-6 pb-6 dflex justify-content-center">
                 <div className="col1 pr-1">
                     <QuickContact />
@@ -32,4 +57,4 @@ const financialPlanningPage = () => {
 
 }
 
-export default financialPlanningPage
+export default FinancialPlanningPage

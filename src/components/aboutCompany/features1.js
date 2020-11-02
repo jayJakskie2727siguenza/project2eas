@@ -1,22 +1,82 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 
 
 // import img1 from '../../images/about-image-2.png'
-import img2 from '../../images/Quality-2.png'
-import img3 from '../../images/Relation-2.png'
-import img4 from '../../images/Abilities-2.png'
-import img5 from '../../images/about-image2.jpg'
+// import img2 from '../../images/Quality-2.png'
+// import img3 from '../../images/Relation-2.png'
+// import img4 from '../../images/Abilities-2.png'
+// import img5 from '../../images/about-image2.jpg'
 // import img6 from '../../images/about-image3.png'
 
-
+const getData = graphql` {
+    wpgraph2eas {
+      pageBy(uri: "about") {
+        aboutus_pagesection_acf {
+          reasonSection {
+            contentTitle
+            contentSubTitle1
+            contentSubTitle2
+            contentSubTitle3
+            contentDescription1
+            contentDescription2
+            contentDescription3
+             contentIcon1 {
+                icon1:sourceUrl
+            }
+            contentIcon2 {
+                icon2:sourceUrl
+            }
+            contentIcon3 {
+                icon3:sourceUrl
+            }
+            contentImage {
+                sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }`
 
 const Features1 = () => {
 
+    const {
+
+        wpgraph2eas: {
+            pageBy: {
+                aboutus_pagesection_acf: {
+                    reasonSection: {
+                        contentTitle,
+                        contentSubTitle1,
+                        contentSubTitle2,
+                        contentSubTitle3,
+                        contentDescription1,
+                        contentDescription2,
+                        contentDescription3,
+                        contentIcon1: {
+                            icon1
+                        },
+                        contentIcon2: {
+                            icon2
+                        },
+                        contentIcon3: {
+                            icon3
+                        },
+                        contentImage: {
+                            sourceUrl
+                        }
+                    }
+                }
+            }
+        }
+
+    } = useStaticQuery(getData)
 
 
     return (
-        <section className="features(1) container mt-4">
+        <section className="reason container mt-4">
             {/* <div className="solutions dflex justify-content-center align-items-center mb-8 mt-1">
                 <div className="solutions__img pr-1">
                     <img
@@ -50,69 +110,80 @@ const Features1 = () => {
             <div className="reasons mt-1 mb-8">
                 <div className="reasons__col1 px-1 py-4">
                     <h2 className="contentTitle--title">
-                        Some Reasons to Work Together
-                </h2>
+                        {contentTitle ? contentTitle : (<span>Some Reasons to Work Together(default)</span>)}
+                        {/* Some Reasons to Work Together */}
+                    </h2>
                     <div
                         className="reasons__col1--1 mt-4 dflex justify-content-center align-items-start"
                     >
                         <img
-                            src={img2}
+                            src={icon1}
                             alt="Quality-2"
                             className="reasons__col1--1--img px-1"
                         />
 
                         <div className="pl-2">
                             <h3 className="contentTitle--subtitle">
-                                We Believe in Best Quality
-                    </h3>
+                                {contentSubTitle1 ? contentSubTitle1 : (<span>We Believe in Best Quality(default)</span>)}
+                                {/* We Believe in Best Quality */}
+                            </h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                {contentDescription1 ? contentDescription1 : (<span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                 do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua ut enim ad minim veniam.
-                    </p>
+                                aliqua ut enim ad minim veniam.(default)</span>)}
+                                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua ut enim ad minim veniam. */}
+                            </p>
                         </div>
                     </div>
                     <div
                         className="reasons__col1--2 mt-4 dflex justify-content-center align-items-start"
                     >
                         <img
-                            src={img3}
+                            src={icon2}
                             alt="Relation-2"
                             className="reasons__col1--2--img px-1"
                         />
                         <div className="pl-1">
                             <h3 className="contentTitle--subtitle">
-                                We Believe in Good Relation
-                    </h3>
+                                {contentSubTitle2 ? contentSubTitle2 : (<span>We Believe in Good Relation(default)</span>)}
+                                {/* We Believe in Good Relation */}
+                            </h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                                do eiusmod tempor incididunt.
-                    </p>
+                                {contentDescription2 ? contentDescription2 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                                do eiusmod tempor incididunt.(default)</span>)}
+                                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                                do eiusmod tempor incididunt. */}
+                            </p>
                         </div>
                     </div>
                     <div
                         className="reasons__col1--3 mt-4 dflex justify-content-center align-items-start"
                     >
                         <img
-                            src={img4}
+                            src={icon3}
                             alt="Abilities-2"
                             className="reasons__col1--3--img px-1"
                         />
                         <div className="pl-1">
                             <h3 className="contentTitle--subtitle">
-                                We Believe in Abilities
-                    </h3>
+                                {contentSubTitle3 ? contentSubTitle3 : (<span>We Believe in Abilities(default)</span>)}
+                                {/* We Believe in Abilities */}
+                            </h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                                do eiusmod tempor incididunt.
-                    </p>
+                                {contentDescription3 ? contentDescription3 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                                do eiusmod tempor incididunt.(default)</span>)}
+                                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                                do eiusmod tempor incididunt. */}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div className="reasons__col2">
                     <img
                         className="reasons__col2--img"
-                        src={img5}
+                        src={sourceUrl}
                         alt="about-2"
                     />
 

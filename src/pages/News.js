@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { graphql, useStaticQuery } from 'gatsby'
+
 import '../styles/style.scss'
 import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
@@ -8,15 +11,34 @@ import { Banner, Marketing, Architect, Family, Commerce, Management, Funds } fro
 
 
 
+const getData = graphql`
+{
+    wpgraph2eas {
+    pageBy(uri: "news") {
+      news_pagesection_acf {
+        title
+      }
+    }
+  }
+}
+`
 
+const BlogStyle = () => {
 
-const blogStyle = () => {
-
+    const {
+        wpgraph2eas: {
+            pageBy: {
+                news_pagesection_acf: {
+                    title
+                }
+            }
+        }
+    } = useStaticQuery(getData)
 
     return (
         <Layout>
-            <SEO title="News" />
-            <Banner title="News" />
+            <SEO title={title} />
+            <Banner title={title} />
             <section className="mainSection container">
                 <div className="mainSection--1 dflex px-1">
                     <div className="mainSection__col2">
@@ -37,4 +59,4 @@ const blogStyle = () => {
     )
 }
 
-export default blogStyle
+export default BlogStyle
