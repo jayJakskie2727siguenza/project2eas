@@ -57,7 +57,7 @@ const contactUsCol1 = () => {
                         ></textarea>
                     </div>
                 </div>
-                <button className="btn-warning">Submit</button>
+                <button className="btn-warning btnHoveringFloat">Submit</button>
             </form>
         </div>
     )

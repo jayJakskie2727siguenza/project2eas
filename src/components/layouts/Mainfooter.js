@@ -42,7 +42,7 @@ const Mainfooter = () => {
                     }
                 </p>
                 <a href="tel:+63 917 421 9688">
-                    <button className="mainFooter__content--btn ">
+                    <button className=" btn-primary btn">
                         {
                             button ? button : (<span>Call Now (default)</span>)
                         }

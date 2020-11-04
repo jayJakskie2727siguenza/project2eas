@@ -67,11 +67,7 @@ const Process = () => {
 `)
 
 
-    // const innerProps = (data) => {
-    //     return { __html: data.content }
-    // }
 
-    console.log(arrayNodes.length)
 
 
     return (

@@ -59,19 +59,28 @@ const Hero = () => {
     <section className="hero" style={getBackgroundImage}>
       <div className="hero__contentWrapper dflex justify-content-end container">
         <div className="hero__content">
-          <h1 className="hero__content--title">
-            {headings}
-          </h1>
+          <ul>
+            <li>
+              <div>
+                <h1 className="hero__content--title">
+                  {headings}
+                </h1>
 
-          <p className="hero__content--subtitle">
-            {subheadings}
-          </p>
-          <button className="btn btn-primary-outline hero__content--btn mt-4">
-            {buttons}
-            <i className="fas fa-long-arrow-alt-right ml-1">
-              <FontAwesomeIcon icon={faLongArrowAltRight} />
-            </i>
-          </button>
+                <p className="hero__content--subtitle">
+                  {subheadings}
+                </p>
+                <a href="tel:+63 917 421 9688">
+                  <button className=" btn-primary btn mt-4">
+                    {buttons}
+                    <i className="fas fa-long-arrow-alt-right ml-1">
+                      <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </i>
+                  </button>
+                </a>
+              </div>
+            </li>
+
+          </ul>
         </div>
       </div>
     </section>)

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook, faPhoneAlt, faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-// import EASLogo from '../../images/2EAS-LOGO-Horizontal-Website-footer.png'
+import EASLogo from '../../images/2EAS-LOGO-Horizontal-Website-footer.png'
 
 const getData = graphql`
 {
@@ -14,9 +14,7 @@ const getData = graphql`
       footer_pagesection_acf {
         footer {
           about {
-            image {
-              sourceUrl
-            }
+            
             description
           }
           address {
@@ -45,9 +43,7 @@ const Footer = () => {
         footer_pagesection_acf: {
           footer: {
             about: {
-              image: {
-                sourceUrl
-              },
+
               description
             },
             address: {
@@ -75,7 +71,7 @@ const Footer = () => {
         <div className="footer__list container">
           <div className="footer__list--about">
             <div className="footer__list--about--imgWrapper">
-              <img className="footer__list--about--imgWrapper--img" src={sourceUrl} alt="2EAS-LOGO" />
+              <img className="footer__list--about--imgWrapper--img" src={EASLogo} alt="2EAS-LOGO" />
             </div>
             <p className="footer__list--about--p mb-1">
               {

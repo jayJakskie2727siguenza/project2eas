@@ -87,7 +87,7 @@ export class financialPlanning2 extends Component {
                 }
             ) => {
                 return (
-                    <div div className="financialPlanning2 mb-3 pt-4" >
+                    <div className="financialPlanning2 mb-3 pt-4" >
 
                         <div className="financialPlanning2__Accordion1 mb-2 " onPointerDown={() => this.check(1)}>
 

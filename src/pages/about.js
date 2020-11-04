@@ -6,7 +6,7 @@ import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
 
 
-import { Banner, Features, Status, ProvideSolution } from '../components/aboutCompany/aboutcompany'
+import { Banner, Features, Status, ProvideSolution, Teams } from '../components/aboutCompany/aboutcompany'
 
 const data = graphql`{
     wpgraph2eas {
@@ -33,7 +33,7 @@ const AboutCompany = () => {
       <ProvideSolution />
       <Features />
       <Status />
-      {/* <Teams /> */}
+      <Teams />
       <MainFooter />
     </Layout>
   )

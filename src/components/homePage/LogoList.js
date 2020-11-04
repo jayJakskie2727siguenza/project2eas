@@ -1,56 +1,35 @@
 import React, { Component } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-//images
-// div1
-// import expensify from '../../images/expensify.png'
-// import workflow from '../../images/workflow.png'
-// import capsule from '../../images/capsule.png'
-// import checkeeper from '../../images/checkeeper.png'
-
-// // div2
-// import shopify from '../../images/shopify.png'
-// import harvest from '../../images/harvest.png'
-// import fathom from '../../images/fathom.png'
-// import unleashed from '../../images/unleashed.png'
-
-// // div3
-// import freshbooks from '../../images/freshbooks.png'
-// import constantcontact from '../../images/constantcontact.png'
-// import tradegecko from '../../images/tradegecko.png'
-// import chaser from '../../images/chaser.png'
-
-// // div4
-
-// import dear from '../../images/dear.png'
-// import hubdoc from '../../images/Hubdoc.png'
-// import vend from '../../images/vend.png'
 
 
 
-
-
+let setInt = ""
+let arrayData = []
+let arrayStored = []
 export default class Logolist extends Component {
     state = {
-        opacity: 0
+        opacity: 1,
+
     }
 
-
-
-    componentDidMount = () => {
-        this.setInt = setInterval(() => {
-            if (this.state.opacity === 3) {
-                this.setState({ opacity: 0 })
+    timeInterval = () => {
+        setInt = setInterval(() => {
+            if (this.state.opacity === arrayStored.length) {
+                this.setState({ opacity: 1 })
             } else {
                 this.setState({ opacity: this.state.opacity + 1 })
             }
-        }, 2000)
+        }, 2500)
+    }
+
+    componentDidMount = () => {
+        this.timeInterval()
     }
 
     generatingArray = (arrayParams) => {
 
-        let arrayData = []
-        let arrayStored = []
+
 
 
         arrayParams.map((data) => {
@@ -74,14 +53,14 @@ export default class Logolist extends Component {
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.setInt)
+        clearInterval(setInt)
     }
 
     mouseEnter = () => {
-        this.componentWillUnmount()
+        clearInterval(setInt)
     }
     mouseOut = () => {
-        this.componentDidMount()
+        this.timeInterval()
     }
 
     render() {
@@ -133,10 +112,6 @@ export default class Logolist extends Component {
                     }
                 }) => {
 
-
-
-
-
                     return (
                         <section className="logolist__wrapper container  my-2">
 
@@ -145,7 +120,7 @@ export default class Logolist extends Component {
                             <h2 className="logolist__wrapper--h2 text-center  mb-2">
                                 {title ? title : (<span>OTHER XERO ADD-ON WE RECOMMEND FOR YOUR BUSINESS(default)</span>)}
                             </h2>
-                            <div onPointerEnter={this.mouseEnter} onPointerLeave={this.mouseOut} className="logolist__wrapperSlider mb-4 container ">
+                            <div className="logolist__wrapperSlider mb-4 container ">
                                 {
                                     this.generatingArray(nodes).map((data, index) => {
 
@@ -157,20 +132,13 @@ export default class Logolist extends Component {
                                                     data.map((data, index) => {
 
                                                         return (
-                                                            <div key={index} className="logolist__wrapper--div1--imgWrapper logolist__wrapper--div--imgWrapper">
+                                                            <div key={index} onPointerEnter={this.mouseEnter} onPointerLeave={this.mouseOut} className="logolist__wrapper--div1--imgWrapper logolist__wrapper--div--imgWrapper">
                                                                 <img className="logolist__wrapper--div--imgWrapper--img" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
                                                             </div>
                                                         )
                                                     })
                                                 }
-
-
-
                                             </div>
-
-
-
-
                                         )
                                     })
                                 }

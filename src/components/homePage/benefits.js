@@ -92,7 +92,7 @@ const Benefits = () => {
 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.(default)</span>)} */}
 
                     </p>
-                    <button className="btn-1 btn-primary my-1">
+                    <button className="btn btn-primary my-1">
                         {
                             button ? button : <span>LEARN ABOUT THE INDUSTRIES WE PROVIDE(default)</span>
                         }

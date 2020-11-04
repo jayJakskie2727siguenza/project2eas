@@ -1,12 +1,40 @@
 .teams {
   &__wrapper {
-    &--1 {
-      &--imgWrapper {
-        width: 0px;
-        height: 0px;
-        &--img {
-          width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    &--ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 310px));
+      grid-gap: 10px;
+      justify-content: center;
+      &--li {
+        text-align: center;
+        &--items {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 5px 10px 10px 10px;
+          border: 1px solid $border;
+          &--imgWrapper {
+            width: 120px;
+            // height: 0px;
+            &--img {
+              width: 100%;
+            }
+          }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 785px) {
+  .teams {
+    &__wrapper {
+      &--ul {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
       }
     }
   }

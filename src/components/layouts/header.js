@@ -1,6 +1,5 @@
 // import PropTypes from "prop-types"
 import React, { Component } from "react"
-// import Images from '../image'
 
 import logoImage from '../../images/2EAS-LOGO-Horizontal-Website.png'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -127,7 +126,7 @@ export class Header extends Component {
                 </li>
                 <li className="nav__menu--list--item">
 
-                  <a href="tel:+63 917 421 9688" ><button className="nav__menu--list--item--button">Call Now</button></a>
+                  <a href="tel:+63 917 421 9688" ><button className="nav__menu--list--item--button btnHoveringFloat">Call Now</button></a>
 
 
 
