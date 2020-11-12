@@ -85,9 +85,7 @@ const Process = () => {
                     {description ? description : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
                     tempor incididunt ut labore et dolore. On the other hand we denounce
                     with righteous.(default)</span>)}
-                    {/* Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-                    tempor incididunt ut labore et dolore. On the other hand we denounce
-                    with righteous. */}
+
                 </p>
             </div>
             <div className="process__icon">
