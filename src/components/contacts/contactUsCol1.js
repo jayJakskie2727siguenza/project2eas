@@ -1,6 +1,6 @@
 import React from 'react'
-import gifMessage from '../../images/gifMessage.gif'
-import tyCheck from '../../images/thankYouMessage.gif'
+// import gifMessage from '../../images/gifMessage.gif'
+// import tyCheck from '../../images/thankYouMessage.gif'
 
 
 
