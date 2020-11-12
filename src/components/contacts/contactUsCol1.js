@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../images/gifMessage.gif'
+import gifMessage from '../../images/gifMessage.gif'
 import tyCheck from '../../images/thankYouMessage.gif'
 
 
@@ -171,7 +171,7 @@ const ContactUsCol1 = () => {
                 <div className={`contactUs__col1--gifWrapper ${contact.loading ? "opacity-show" : contact.submited ? "opacity-hide" : "opacity-hide"} `}>
 
                     <img src={
-                        contact.loading ? img : ""
+                        contact.loading ? gifMessage : ""
                     } className="contactUs__col1--gifWrapper--gif" alt="Message Sent gif" />
                     <h2 className={`contactUs__col1--gifWrapper--h2 ${contact.loading ? "opacity-show" : contact.submited ? "opacity-hide" : "opacity-hide"}`}>Message Sent</h2>
                 </div>

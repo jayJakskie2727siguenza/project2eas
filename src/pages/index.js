@@ -18,7 +18,7 @@ const IndexPage = () => {
       pageBy: {
         page_seo_acf: {
           siteMetaTitle,
-          siteMetaDiscription
+          siteMetaDescription
         }
       }
     }
@@ -28,7 +28,7 @@ const IndexPage = () => {
       pageBy(uri: "home") {
         page_seo_acf {
           siteMetaTitle
-          siteMetaDiscription
+          siteMetaDescription
         }
       }
     }
@@ -37,7 +37,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title={siteMetaTitle} description={siteMetaDiscription} />
+      <SEO title={siteMetaTitle} description={siteMetaDescription} />
 
       <Hero />
       <Benefits />

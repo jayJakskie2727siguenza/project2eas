@@ -21,9 +21,10 @@ const getData = graphql`
 {
     wpgraph2eas {
     pageBy(uri: "news") {
-      news_pagesection_acf {
-        title
-      }
+      page_seo_acf {
+                    siteMetaTitle
+                    siteMetaDescription
+                }
     },
     
     posts {
@@ -49,8 +50,10 @@ const BlogStyle = () => {
     const {
         wpgraph2eas: {
             pageBy: {
-                news_pagesection_acf: {
-                    title
+
+                page_seo_acf: {
+                    siteMetaTitle,
+                    siteMetaDescription
                 }
             },
 
@@ -65,8 +68,8 @@ const BlogStyle = () => {
 
     return (
         <Layout>
-            <SEO title={title} />
-            <Banner title={title} />
+            <SEO title={siteMetaTitle} description={siteMetaDescription} />
+            <Banner title={siteMetaTitle} />
             <section className="mainSection container">
                 <div className="mainSection--1 dflex px-1">
                     <div className="mainSection__col2">

@@ -11,9 +11,10 @@ import { Banner, Features, Status, ProvideSolution, Teams } from '../components/
 const data = graphql`{
     wpgraph2eas {
       pageBy(uri: "about") {
-        aboutus_pagesection_acf {
-          aboutUsTitle
-        }
+        page_seo_acf {
+        siteMetaTitle
+        siteMetaDescription
+      }
       }
     }
   }`
@@ -21,15 +22,16 @@ const data = graphql`{
 const AboutCompany = () => {
   const { wpgraph2eas: {
     pageBy: {
-      aboutus_pagesection_acf: {
-        aboutUsTitle
+      page_seo_acf: {
+        siteMetaTitle,
+        siteMetaDescription
       }
     }
   } } = useStaticQuery(data)
   return (
     <Layout>
-      <SEO title={aboutUsTitle} />
-      <Banner title={aboutUsTitle} />
+      <SEO title={siteMetaTitle} description={siteMetaDescription} />
+      <Banner title={siteMetaTitle} />
       <ProvideSolution />
       <Features />
       <Status />

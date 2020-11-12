@@ -18,6 +18,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    // https://www.googletagmanager.com/gtag/js?id=
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-1BYFETEHKR",
+        head: true,
+        respectDNT: true
+      }
+    },
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {

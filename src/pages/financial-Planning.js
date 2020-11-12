@@ -14,9 +14,10 @@ const getData = graphql`
 {
     wpgraph2eas {
         pageBy(uri: "services") {
-            services_pagesection_acf {
-                title
-            }
+            page_seo_acf {
+                    siteMetaTitle
+                    siteMetaDescription
+                }
         }
     }
 }
@@ -27,8 +28,9 @@ const FinancialPlanningPage = () => {
     const {
         wpgraph2eas: {
             pageBy: {
-                services_pagesection_acf: {
-                    title
+                page_seo_acf: {
+                    siteMetaTitle,
+                    siteMetaDescription
                 }
             }
         }
@@ -36,8 +38,8 @@ const FinancialPlanningPage = () => {
 
     return (
         <Layout>
-            <SEO title={title} />
-            <Banner title={title} />
+            <SEO title={siteMetaTitle} description={siteMetaDescription} />
+            <Banner title={siteMetaTitle} />
             <section className="main container pt-6 pb-6 dflex justify-content-center">
                 <div className="col1 pr-1">
                     <QuickContact />

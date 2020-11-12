@@ -11,11 +11,10 @@ import { Banner, ContactUs } from '../components/contacts/contactsMain'
 const getData = graphql`
 {wpgraph2eas {
     pageBy(uri: "contact") {
-      contact_pagesection_acf {
-        title
-       
-       
-      }
+       page_seo_acf {
+                    siteMetaTitle
+                    siteMetaDescription
+                }
     }
   }}
 `
@@ -25,10 +24,9 @@ const ContactPage = () => {
     const {
         wpgraph2eas: {
             pageBy: {
-                contact_pagesection_acf: {
-                    title
-
-
+                page_seo_acf: {
+                    siteMetaTitle,
+                    siteMetaDescription
                 }
             }
         }
@@ -36,8 +34,8 @@ const ContactPage = () => {
 
     return (
         <Layouts>
-            <SEO title={title} />
-            <Banner title={title} />
+            <SEO title={siteMetaTitle} description={siteMetaDescription} />
+            <Banner title={siteMetaTitle} />
 
             <ContactUs />
             <MainFooter />
