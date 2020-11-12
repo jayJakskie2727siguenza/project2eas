@@ -20,7 +20,7 @@ const Banner = ({ title, subtitle }) => {
                 <div className="banner__wrapper--main mb-1">
                     <h1 dangerouslySetInnerHTML={{ __html: title }} />
                 </div>
-                <div className="banner__wrapper--submain dflex justify-content-center">
+                <div className="banner__wrapper--submain dflex ">
 
                     <a className="banner__wrapper--submain--mainpage mr-1" href="/">Home</a>
                     <span className="banner__wrapper--submain--icon mr-1">

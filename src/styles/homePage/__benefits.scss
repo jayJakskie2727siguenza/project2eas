@@ -5,6 +5,13 @@
     grid-gap: 20px;
     &--left {
       margin-top: -36px;
+      padding-top: 10px;
+      &--imgWrapper {
+        min-width: 255px;
+        &--img {
+          width: 100%;
+        }
+      }
     }
     &--right {
       &--i {

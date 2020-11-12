@@ -58,3 +58,8 @@
     transform: translateY(0px);
   }
 }
+
+.btnDisabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

@@ -1,67 +1,118 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 
 
+let gettingDataArrayStoredLength = 0
 
+export default class LogoList extends Component {
 
-let setInt = ""
-let arrayData = []
-let arrayStored = []
-export default class Logolist extends Component {
     state = {
-        opacity: 1,
+        opacity: 0,
+        setInt: "",
+        storedLength: 0
+
+
 
     }
 
-    timeInterval = () => {
-        setInt = setInterval(() => {
-            if (this.state.opacity === arrayStored.length) {
-                this.setState({ opacity: 1 })
-            } else {
-                this.setState({ opacity: this.state.opacity + 1 })
-            }
-        }, 2500)
-    }
+
+    // built-in Functions
+
 
     componentDidMount = () => {
-        this.timeInterval()
-    }
 
-    generatingArray = (arrayParams) => {
+        this.startCountingInterval()
 
 
 
-
-        arrayParams.map((data) => {
-
-            if (arrayData.length === 4) {
-                arrayStored.push(arrayData)
-                arrayData = []
-                return arrayData.push(data)
-
-            } else {
-
-                return arrayData.push(data)
-            }
-
-        })
-
-        arrayStored.push(arrayData)
-
-        return arrayStored
 
     }
 
     componentWillUnmount = () => {
-        clearInterval(setInt)
+        clearInterval(this.state.setInt)
     }
 
+
+
+    // EventListener Functions
+
     mouseEnter = () => {
-        clearInterval(setInt)
+        this.componentWillUnmount()
+
     }
+
     mouseOut = () => {
-        this.timeInterval()
+        this.startCountingInterval()
     }
+
+
+    // getting data in graphql
+    gettingData = (nodes) => {
+
+        let arrayStored = []
+        let arrayData = []
+
+
+        nodes.map(data => {
+            if (arrayData.length === 4) {
+                arrayStored.push(arrayData)
+                arrayData = []
+                return arrayData.push(data)
+            } else {
+                return (
+                    arrayData.push(data)
+                )
+            }
+        })
+
+
+        arrayStored.push(arrayData)
+
+        // getting the data stored length in gettingData Functions
+        gettingDataArrayStoredLength = arrayStored.length
+
+
+        return arrayStored
+
+
+    }
+
+
+    startCountingInterval = () => {
+
+
+
+
+        // const varComponent = {
+        //     divisionLength: this.state.storedLength
+
+
+        // }
+
+        return this.setState({
+            setInt: setInterval(() => {
+                if (this.state.opacity === gettingDataArrayStoredLength - 1) {
+                    this.setState({
+
+                        opacity: 0
+                    })
+                } else {
+                    this.setState({
+                        opacity: this.state.opacity + 1,
+
+                    })
+                }
+
+
+            }, 2000)
+        })
+    }
+
+
+
+
+
+
 
     render() {
         return <StaticQuery
@@ -75,7 +126,7 @@ export default class Logolist extends Component {
                                 featuredImage {
                                     sourceUrl
                                     altText
-                                    id
+                                   
                                 }
                             }
                         },
@@ -122,18 +173,18 @@ export default class Logolist extends Component {
                             </h2>
                             <div className="logolist__wrapperSlider mb-4 container ">
                                 {
-                                    this.generatingArray(nodes).map((data, index) => {
+                                    this.gettingData(nodes).map((data, index) => {
 
                                         return (
 
                                             <div key={index} className={`logolist__wrapper--div1 logolist__wrapper--div ${this.state.opacity === index ? "opacity-show" : "opacity-hide"}`}>
 
                                                 {
-                                                    data.map((data, index) => {
+                                                    data.map(({ featuredImage: { sourceUrl, altText } }, index) => {
 
                                                         return (
                                                             <div key={index} onPointerEnter={this.mouseEnter} onPointerLeave={this.mouseOut} className="logolist__wrapper--div1--imgWrapper logolist__wrapper--div--imgWrapper">
-                                                                <img className="logolist__wrapper--div--imgWrapper--img" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
+                                                                <img className="logolist__wrapper--div--imgWrapper--img" src={sourceUrl} alt={altText} />
                                                             </div>
                                                         )
                                                     })

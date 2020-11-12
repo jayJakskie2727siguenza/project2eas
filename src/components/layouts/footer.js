@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import addToMailChimp from 'gatsby-plugin-mailchimp'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook, faPhoneAlt, faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
@@ -62,6 +63,54 @@ const Footer = () => {
       }
     }
   } = useStaticQuery(getData)
+
+  const [state, setState] = React.useState({
+    email: "",
+    result: "",
+    loading: false
+  })
+
+  const { email, result } = state
+
+  const submitButton = async (e) => {
+    e.preventDefault()
+    if (email) {
+      setState({
+        ...state,
+        loading: true
+      })
+
+      const status = await addToMailChimp(email)
+      console.log(status)
+      if (status.result === "success") {
+        setState({
+          ...state,
+          result: status,
+          loading: false
+        })
+      } else {
+        setState({
+          ...state,
+          result: result,
+          loading: false
+        })
+      }
+
+
+    } else {
+      console.log("The Field is Empty")
+    }
+
+
+
+  }
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  }
 
   return (
     <section>
@@ -183,13 +232,18 @@ const Footer = () => {
               value your privacy. (default)</span>)
               }
             </p>
-            <div className="footer__list--item--submit dflex justify-content-between">
-              <input
-                className="footer__list--item--submit--input"
-                type="email"
-                placeholder="Enter Your Email"
-              />
-              <button className="footer__list--item--submit--btn">Submit</button>
+            <div className="footer__list--item--submit ">
+              <form className="dflex justify-content-between">
+                <input
+                  className="footer__list--item--submit--input"
+                  type="email"
+                  name="email"
+                  value={state.email}
+                  placeholder="Enter Your Email"
+                  onChange={handleChange}
+                />
+                <button onClick={submitButton} className="footer__list--item--submit--btn">Submit</button>
+              </form>
             </div>
           </div>
           <div>

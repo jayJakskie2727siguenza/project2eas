@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from '../image'
+// import Image from '../image'
 
 // import pImg1 from '../../images/demo-eleven-image01.jpg'
 // import pImg2 from '../../images/demo-eleven-image02.jpg'
@@ -14,7 +14,7 @@ const About = () => {
 
 
     const {
-        wpgraph2eas: {
+        wpgraph2eas: {  
             pageBy:{
                 home_pagesection_acf :{
                     sections: {
@@ -22,55 +22,54 @@ const About = () => {
                             title1,
                             title2,
                             description1,
-                            description2
+                            description2,
+                            image1: {
+                                img1Source,
+                                img1Alttext
+                            },
+                            image2 :{
+                                img2Source,
+                                img2Alttext
+                            }
                         }
                     }
                 }
             }
-},
-    demoElevenImageOne: {
-        childImageSharp:{
-            demoElevenImg1Fluid
         }
-    },
-        demoElevenImageTwo: {
-    childImageSharp:{
-                demoElevenImg2Fluid
-    }
-}
+//     demoElevenImageOne: {
+//         childImageSharp:{
+//             demoElevenImg1Fluid
+//         }
+//     },
+//         demoElevenImageTwo: {
+//     childImageSharp:{
+//                 demoElevenImg2Fluid
+//     }
+// }
     } = useStaticQuery(graphql`
     {
     wpgraph2eas {
-      pageBy(uri: "home") {
+    pageBy(uri: "home") {
         home_pagesection_acf {
-          sections {
-            about {
-              title1
-              title2
-              description1
-              description2
+            sections {
+                about {
+                title1
+                title2
+                description1
+                description2
+                    image1 {
+                        img1Source:sourceUrl
+                        img1Alttext: altText
+                    }
+                    image2 {
+                        img2Source:sourceUrl
+                        img2Alttext: altText
+                    }
+                }
             }
-          }
         }
-      }
-    },
-  demoElevenImageOne:file(relativePath:{eq:"demo-eleven-image01.jpg"}){
-    childImageSharp{
-      demoElevenImg1Fluid:fluid(maxWidth:630){
-       
-        ...GatsbyImageSharpFluid_noBase64
-      }
     }
-  },
-  demoElevenImageTwo:file(relativePath:{eq:"demo-eleven-image02.jpg"}){
-    childImageSharp{
-       demoElevenImg2Fluid:fluid(maxWidth:630){
-        
-        ...GatsbyImageSharpFluid_noBase64
-      }
     }
-  }
-  
 }
     `)
 
@@ -99,22 +98,22 @@ const About = () => {
             </div>
             <div className="about__item mb-2">
                 <div>
-                    {/* <img
+                    <img
                         className="w-100"
-                        src={pImg1}
-                        alt="aboutImage1"
-                    /> */}
-                    <Image picsFluid={demoElevenImg1Fluid} alt="aboutImage1" />
+                        src={img1Source}
+                        alt={img1Alttext}
+                    />
+                    {/* <Image picsFluid={demoElevenImg1Fluid} alt="aboutImage1" /> */}
                 </div>
             </div>
             <div className="about__item pt-3">
                 <div>
-                    {/* <img
+                    <img
                         className="w-100"
-                        src={pImg2}
-                        alt="aboutImage2"
-                    /> */}
-                    <Image picsFluid={demoElevenImg2Fluid} alt="aboutImage2" />
+                        src={img2Source}
+                        alt={img2Alttext}
+                    />
+                    {/* <Image picsFluid={demoElevenImg2Fluid} alt="aboutImage2" /> */}
                 </div>
             </div>
             <div className="about__item px-3 pt-3">

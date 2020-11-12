@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from '../image'
+// import Image from '../image'
 import Features from './features'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,27 +8,25 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const getData = graphql`
-  {wpgraph2eas {
-    pageBy(uri: "home") {
-      home_pagesection_acf {
-        sections {
-          benefits {
-            title
-            subTitle
-            description
-            button
+  {
+    wpgraph2eas {
+      pageBy(uri: "home") {
+        home_pagesection_acf {
+          sections {
+            benefits {
+              title
+              subTitle
+              description
+              image {
+                sourceUrl
+                altText
+              }
+               button
+            }
           }
         }
       }
     }
-  },
- imgS: file(relativePath: {eq: "ipod-mockup-xero.png"}) {
-    childImageSharp {
-      fluid(maxWidth: 800) {
-         ...GatsbyImageSharpFluid_noBase64
-      }
-    }
-  }
   }
 `
 
@@ -43,15 +41,14 @@ const Benefits = () => {
                             title,
                             subTitle,
                             description,
+                            image: {
+                                sourceUrl,
+                                altText
+                            },
                             button
                         }
                     }
                 }
-            }
-        },
-        imgS: {
-            childImageSharp: {
-                fluid
             }
         }
     } = useStaticQuery(getData)
@@ -77,7 +74,8 @@ const Benefits = () => {
             <div className="benefits__content container">
                 <div className="benefits__content--left">
                     <div className="benefits__content--left--imgWrapper">
-                        <Image picsFluid={fluid} alt="ipodMockupXero" className="benefits__content--left--imgWrapper--img" />
+                        <img className="benefits__content--left--imgWrapper--img" src={sourceUrl} alt={altText} />
+                        {/* <Image picsFluid={fluid} alt="ipodMockupXero" className="benefits__content--left--imgWrapper--img" /> */}
                     </div>
                 </div>
 

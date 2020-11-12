@@ -1,4 +1,6 @@
 import React from 'react'
+// import img1 from '../../images/demo-eleven-banner-2.jpg'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -52,6 +54,7 @@ const Hero = () => {
 
   const getBackgroundImage = {
     backgroundImage: `url(${bgImage})`
+    // backgroundImage: "url(../../images/demo-eleven-banner-2.jpg)"
   }
 
 

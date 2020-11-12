@@ -36,10 +36,10 @@ const Process = () => {
     } = useStaticQuery(graphql`
 {
 
-    
+
 
     wpgraph2eas {
-        
+
         processitems(first: 100) {
        arrayNodes:nodes{
            id
@@ -108,171 +108,7 @@ const Process = () => {
                     )}
 
 
-                    {/* <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoAgreement} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content ">
-                            <h3 className="process__icon--wrapper--content--h3">Easy Invoicing</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
 
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoSmartphone} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">Go Mobile</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoBinder} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">Inventory</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoRevenue} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">multi-currency</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoReport} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">700+ third-party apps</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoAudit} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">attach files to data</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoEarning} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">create purchase orders</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoAgreement} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">claim those expenses</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoLedger} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">pay bills</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoBinder} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">bank connections</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoAudit} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">contact & smart list</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoReport} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">xero expenses</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoRevenue} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">bank reconciliation</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoReport} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">information security</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoLedger} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">sales tax</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoEarning} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">quotes</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoBinder} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">accept payments</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div>
-                    <div className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                        <div className="process__icon--wrapper--icon mr-1">
-                            <img className="process__icon--wrapper--icon--icon" src={logoSmartphone} alt="pie-chart" />
-                        </div>
-                        <div className="process__icon--wrapper--content">
-                            <h3 className="process__icon--wrapper--content--h3">fixed assets</h3>
-                            <p className="process__icon--wrapper--content--p">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore. </p>
-                        </div>
-                    </div> */}
                 </div>
 
 
@@ -286,3 +122,6 @@ const Process = () => {
 
 
 export default Process
+
+
+
