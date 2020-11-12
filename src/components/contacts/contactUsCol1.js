@@ -1,6 +1,6 @@
 import React from 'react'
-import img from '../../images/gifmessage.gif'
-import tyCheck from '../../images/thankYouCheckmark.gif'
+import img from '../../images/gifMessage.gif'
+import tyCheck from '../../images/thankYouMessage.gif'
 
 
 
@@ -21,15 +21,6 @@ const ContactUsCol1 = () => {
 
 
     })
-
-
-
-
-
-
-
-
-
 
     const handleChange = (e) => {
         if (contact.FullName === "" || contact.Email === "" || contact.Telephone === "" || contact.Company === "" || contact.ContactFormMessage === "") {

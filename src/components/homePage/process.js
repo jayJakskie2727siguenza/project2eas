@@ -95,7 +95,7 @@ const Process = () => {
 
                     {arrayNodes.map((data) => {
 
-                        console.log(data.content)
+
 
                         return (
                             <div key={data.id} className="process__icon--wrapper--div process__icon--wrapper--div--1">

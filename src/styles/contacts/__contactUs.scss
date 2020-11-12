@@ -150,40 +150,36 @@
 
     &--gifWrapper {
       position: absolute;
-      top: 0px;
-      left: 0px;
-      height: 100%;
       width: 100%;
+      top: 0px;
 
       &--gif {
-        width: 300px;
+        width: 100%;
       }
 
       &--h2 {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        bottom: 0px;
         font-size: 35px;
         transition-delay: 1s;
         color: $success;
-        margin-right: 10px;
       }
     }
 
     &--gifWrapper1 {
       position: absolute;
       top: 0px;
-      left: 0px;
-
+      width: 100%;
       &--h2 {
         color: $success;
         font-size: 35px;
       }
 
       &--gif1 {
-        width: 80%;
+        width: 100%;
       }
+    }
+
+    &--Wrapper {
+      position: relative;
     }
   }
 
@@ -240,16 +236,41 @@
   }
 }
 
+@media (max-width: 678px) {
+  .contactUs {
+    &__col1 {
+      &--gifWrapper {
+        top: 111px;
+      }
+      &--gifWrapper1 {
+        top: 111px;
+      }
+    }
+  }
+}
+
 @media (max-width: 605px) {
   .contactUs {
     &__col1 {
       &--gifWrapper {
-        top: 65px;
+        top: 135px;
         height: 71%;
       }
       &--gifWrapper1 {
-        top: 65px;
+        top: 135px;
         height: 71%;
+      }
+    }
+  }
+}
+@media (max-width: 530px) {
+  .contactUs {
+    &__col1 {
+      &--gifWrapper {
+        top: 165px;
+      }
+      &--gifWrapper1 {
+        top: 165px;
       }
     }
   }
@@ -259,12 +280,13 @@
   .contactUs {
     &__col1 {
       &--gifWrapper {
+        top: 200px;
         &--h2 {
           font-size: 25px;
         }
       }
       &--gifWrapper1 {
-        top: 135px;
+        top: 200px;
         &--h2 {
           font-size: 25px;
         }
@@ -278,11 +300,11 @@
     &__col1 {
       padding: 50px 20px;
       &--gifWrapper {
-        top: 100px;
+        top: 150px;
         height: 59%;
       }
       &--gifWrapper1 {
-        top: 200px;
+        top: 150px;
         height: 59%;
       }
     }
@@ -292,11 +314,12 @@
   .contactUs {
     &__col1 {
       &--gifWrapper {
-        top: 110px;
+        top: 235px;
         height: 50%;
       }
       &--gifWrapper1 {
         height: 50%;
+        top: 235px;
       }
     }
   }
@@ -305,11 +328,9 @@
   .contactUs {
     &__col1 {
       &--gifWrapper {
-        top: 245px;
         height: 46%;
       }
       &--gifWrapper1 {
-        top: 298px;
         height: 59%;
       }
     }
