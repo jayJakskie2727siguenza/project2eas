@@ -101,8 +101,8 @@ const Process = () => {
                                     <img className="process__icon--wrapper--icon--icon" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
                                 </div>
                                 <div className="process__icon--wrapper--content ">
-                                    <h3 className="process__icon--wrapper--content--h3">{data.pTitle.toString()}</h3>
-                                    <p className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: data.content }} />
+                                    <h3 className="process__icon--wrapper--content--h3">{data.pTitle}</h3>
+                                    <div className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: data.content }} ></div>
                                 </div>
                             </div>
                         )
