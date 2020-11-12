@@ -165,13 +165,13 @@ const ContactUsCol1 = () => {
 
                 </form>
                 <div className={`contactUs__col1--gifWrapper1  ${contact.submited ? " opacity-show" : "opacity-hide"}`}>
-                    <img src={contact.submited ? tyCheck : ""} className={`contactUs__col1--gifWrapper1--gif1 ${contact.submited ? " opacity-show" : "opacity-hide"}`} alt="Thank You Checkmark" />
+                    <img src={contact.submited ? require("../../images/thankYouMessage.gif") : ""} className={`contactUs__col1--gifWrapper1--gif1 ${contact.submited ? " opacity-show" : "opacity-hide"}`} alt="Thank You Checkmark" />
                     <h2 className={`contactUs__col1--gifWrapper1--h2 ${contact.submited ? " opacity-show" : "opacity-hide"}`}>Thank You for Submitting</h2>
                 </div>
                 <div className={`contactUs__col1--gifWrapper ${contact.loading ? "opacity-show" : contact.submited ? "opacity-hide" : "opacity-hide"} `}>
 
                     <img src={
-                        contact.loading ? gifMessage : ""
+                        contact.loading ? require("../../images/gifMessage.gif") : ""
                     } className="contactUs__col1--gifWrapper--gif" alt="Message Sent gif" />
                     <h2 className={`contactUs__col1--gifWrapper--h2 ${contact.loading ? "opacity-show" : contact.submited ? "opacity-hide" : "opacity-hide"}`}>Message Sent</h2>
                 </div>
