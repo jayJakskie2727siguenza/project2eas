@@ -93,17 +93,22 @@ const Process = () => {
             <div className="process__icon">
                 <div className="process__icon--wrapper process__icon--wrapper--1">
 
-                    {arrayNodes.map((data) =>
+                    {arrayNodes.map((data) => {
 
-                        <div key={data.id} className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                            <div className="process__icon--wrapper--icon mr-1">
-                                <img className="process__icon--wrapper--icon--icon" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
+                        console.log(data.content)
+
+                        return (
+                            <div key={data.id} className="process__icon--wrapper--div process__icon--wrapper--div--1">
+                                <div className="process__icon--wrapper--icon mr-1">
+                                    <img className="process__icon--wrapper--icon--icon" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
+                                </div>
+                                <div className="process__icon--wrapper--content ">
+                                    <h3 className="process__icon--wrapper--content--h3">{data.pTitle.toString()}</h3>
+                                    <p className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: data.content }} />
+                                </div>
                             </div>
-                            <div className="process__icon--wrapper--content ">
-                                <h3 className="process__icon--wrapper--content--h3">{data.pTitle.toString()}</h3>
-                                <p className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: data.content }} />
-                            </div>
-                        </div>
+                        )
+                    }
 
                     )}
 

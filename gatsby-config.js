@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `2EAS Accounting Philippines`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: "https://2eas-accounting.netlify.app"
@@ -25,7 +25,6 @@ module.exports = {
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
-
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -45,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `2EAS Accounting`,
         short_name: `2EAS`,
         start_url: `/`,
         background_color: `#663399`,
@@ -72,7 +71,6 @@ module.exports = {
       options: {
         precachePages: [
           `/News/`,
-          `/`,
           `/financial-Planning/`,
           `/contactPage/`,
           `/about/`,
