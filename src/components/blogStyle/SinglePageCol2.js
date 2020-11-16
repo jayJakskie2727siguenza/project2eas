@@ -81,7 +81,7 @@ const SinglePageCol2 = () => {
                                         </div>
                                         <div className="singlePage__col2--recentPost--ul--li--date">
                                             <span className="singlePage__col2--recentPost--ul--li--date--date">
-                                                <Moment format="D MMM YYYY" withTitle>{data.postDate}</Moment>
+                                                <Moment format="MMMM DD, YYYY">{data.postDate}</Moment>
                                             </span>
                                         </div>
                                     </Link>

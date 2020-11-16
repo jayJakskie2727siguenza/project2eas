@@ -47,7 +47,11 @@ const Posts = ({ data: { wpgraph2eas: { postBy: { title, content, featuredImage:
         <div className="singlePage__col1 pl-1 pr-2 pt-5 mt-1 mb-5">
           <h2 className="singlePage__col1--h2" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="singlePage__col1--user">
-            <p className="singlePage__col1--user--date"><Moment format="D MMM YYYY" withTitle>{date}</Moment></p>
+            <p className="singlePage__col1--user--date">
+
+              <Moment format="MMMM DD, YYYY" >{date}</Moment>
+
+            </p>
             <div className="singlePage__col1--user--wrapperInfo">
               <span className="singlePage__col1--user--wrapperInfo--name mr-2"><i ><FontAwesomeIcon icon={faUser} /></i> John Doe</span>
               <span className="singlePage__col1--user--wrapperInfo--occupation"><i ><FontAwesomeIcon icon={faCalendarAlt} /></i> Staff Meetings</span>
