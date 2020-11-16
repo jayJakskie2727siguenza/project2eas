@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'gatsby'
-import Moment from 'react-moment'
+// import Moment from 'react-moment'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -85,7 +85,7 @@ const BlogStyle = () => {
                                     altText
                                 } }) => {
 
-                                console.log(postDate)
+
 
                                 return (
 

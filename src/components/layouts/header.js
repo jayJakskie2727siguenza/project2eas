@@ -122,6 +122,10 @@ export class Header extends Component {
                   <AniLink fade to="/contactPage" className="nav__menu--list--item--link">Contact</AniLink>
 
                 </li>
+
+                <li className="nav__menu--list--item">
+                  <AniLink fade to="https://login.xero.com/">Login to Xero</AniLink>
+                </li>
                 <li className="nav__menu--list--item">
 
                   <a href="tel:+63 917 421 9688" ><button className="nav__menu--list--item--button btnHoveringFloat">Call Now</button></a>
