@@ -1,4 +1,5 @@
 import React from 'react'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { useStaticQuery, graphql } from 'gatsby'
 import addToMailChimp from 'gatsby-plugin-mailchimp'
 
@@ -120,7 +121,9 @@ const Footer = () => {
         <div className="footer__list container">
           <div className="footer__list--about">
             <div className="footer__list--about--imgWrapper">
-              <img className="footer__list--about--imgWrapper--img" src={EASLogo} alt="2EAS-LOGO" />
+              <AniLink cover bg="#f4f4f4" duration={0.7} direction="up" to="/">
+                <img className="footer__list--about--imgWrapper--img" src={EASLogo} alt="2EAS-LOGO" />
+              </AniLink>
             </div>
             <p className="footer__list--about--p mb-1">
               {
@@ -233,7 +236,7 @@ const Footer = () => {
               }
             </p>
             <div className="footer__list--item--submit ">
-              <form className="dflex justify-content-between">
+              <form className="footer__list--item--form dflex justify-content-between">
                 <input
                   className="footer__list--item--submit--input"
                   type="email"

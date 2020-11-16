@@ -1,8 +1,7 @@
 import React from 'react'
 import Moment from 'react-moment'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
-// import pImg1 from '../../images/Blog-pic-01-2.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,9 +13,10 @@ const getData = graphql`
       nodes {
         postTitle: title
         postDate: date
+        slug
         featuredImage {
-          sourceUrl
-          altText
+            sourceUrl
+            altText
         }
       }
     }
@@ -65,21 +65,26 @@ const SinglePageCol2 = () => {
                     {
                         nodes.map((data, index) => {
 
+
+
                             return (
+
                                 <li key={index} className="singlePage__col2--recentPost--ul--li">
-                                    <div className="singlePage__col2--recentPost--ul--li--user dflex">
-                                        <div className="singlePage__col2--recentPost--ul--li--user--1--imgwrapper">
-                                            <img src={data.featuredImage.sourceUrl} className="singlePage__col2--recentPost--ul--li--user--1--img" alt={data.featuredImage.altText} />
+                                    <Link to={`/News/posts/${data.slug}`} className="mainSection__col2--blog--content--a">
+                                        <div className="singlePage__col2--recentPost--ul--li--user dflex">
+                                            <div className="singlePage__col2--recentPost--ul--li--user--1--imgwrapper">
+                                                <img src={data.featuredImage.sourceUrl} className="singlePage__col2--recentPost--ul--li--user--1--img" alt={data.featuredImage.altText} />
+                                            </div>
+                                            <div className="singlePage__col2--recentPost--ul--li--user--2">
+                                                <p className="singlePage__col2--recentPost--ul--li--user--2--p">{data.postTitle}</p>
+                                            </div>
                                         </div>
-                                        <div className="singlePage__col2--recentPost--ul--li--user--2">
-                                            <p className="singlePage__col2--recentPost--ul--li--user--2--p">{data.postTitle}</p>
+                                        <div className="singlePage__col2--recentPost--ul--li--date">
+                                            <span className="singlePage__col2--recentPost--ul--li--date--date">
+                                                <Moment format="D MMM YYYY" withTitle>{data.postDate}</Moment>
+                                            </span>
                                         </div>
-                                    </div>
-                                    <div className="singlePage__col2--recentPost--ul--li--date">
-                                        <span className="singlePage__col2--recentPost--ul--li--date--date">
-                                            <Moment format="D MMM YYYY" withTitle>{data.postDate}</Moment>
-                                        </span>
-                                    </div>
+                                    </Link>
                                 </li>)
 
                         })

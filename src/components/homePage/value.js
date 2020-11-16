@@ -59,6 +59,7 @@ const Value = () => {
               eiusmod.
             </p>
           </div>
+
           <div className="value__col">
             <div className="value__col--imgWrapper">
               {/* <img

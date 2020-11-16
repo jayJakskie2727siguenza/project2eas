@@ -1,15 +1,9 @@
 // import PropTypes from "prop-types"
 import React, { Component } from "react"
 
+
 import logoImage from '../../images/2EAS-LOGO-Horizontal-Website.png'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-
-
-
-
-
 
 
 
@@ -42,8 +36,10 @@ export class Header extends Component {
 
     return (
       <header>
+
         <div className="topNav">
-          <nav className={this.state.checking ? "nav1 opacityShow" : "nav1 opacityHide"}>
+
+          {/* <nav className={this.state.checking ? "nav1 opacityShow" : "nav1 opacityHide"}>
             <div className={this.state.checking ? "nav1__div dflex showNav" : "nav1__div dflex hideNav"}>
               <ul
                 className="nav1__div--list list-unstyled dflex mr-4 pt-4"
@@ -74,7 +70,7 @@ export class Header extends Component {
 
               </ul>
             </div>
-          </nav>
+          </nav> */}
           <div
             className="container dflex justify-content-between align-items-center py-1"
           >
@@ -92,11 +88,13 @@ export class Header extends Component {
             className="nav__main container dflex justify-content-between align-items-center py-1"
           >
             <div className="nav__logoWrapper">
-              <img
-                className="nav__logo"
-                src={logoImage}
-                alt="demoElevenLogo"
-              />
+              <AniLink cover bg="#f4f4f4" duration={0.7} direction="up" to="/" className="nav__logoWrapper--a">
+                <img
+                  className="nav__logoWrapper--logo"
+                  src={logoImage}
+                  alt="demoElevenLogo"
+                />
+              </AniLink>
               {/* <Images /> */}
 
             </div>
@@ -138,13 +136,13 @@ export class Header extends Component {
 
 
           </div>
-          <input type="checkbox" className="nav__menu--checkbox" name="checkbox" id="checkbox" onBlur={this.func1} onFocus={this.func1} ></input>
+          {/* <input type="checkbox" className="nav__menu--checkbox" name="checkbox" id="checkbox" onBlur={this.func1} onFocus={this.func1} ></input>
 
           <label htmlFor="checkbox">
             <div className="nav__menu--Btn ml-3" id="sample1" >
               <FontAwesomeIcon icon={faBars} />
             </div>
-          </label>
+          </label> */}
 
         </nav>
 

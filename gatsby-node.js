@@ -24,14 +24,16 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
 
     result.data.wpgraph2eas.posts.nodes.forEach(item => {
-        createPage({
-            path: `/News/posts/${item.slug}`,
-            component: path.resolve(`./src/template/Posts.js`),
-            context: {
-                slug: item.slug
+        createPage(
+            {
+                path: `/News/posts/${item.slug}`,
+                component: path.resolve(`./src/template/Posts.js`),
+                context: {
+                    slug: item.slug
 
+                }
             }
-        })
+        )
 
     })
 }

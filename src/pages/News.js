@@ -1,5 +1,4 @@
 import React from 'react'
-import Moment from 'react-moment'
 
 import { Link } from 'gatsby'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
@@ -13,7 +12,7 @@ import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
 
-import { Banner } from '../components/blogStyle/blogStyle'
+import { Banner, Dates } from '../components/blogStyle/blogStyle'
 
 
 
@@ -122,7 +121,8 @@ const BlogStyle = () => {
                                                     <i className="mainSection__col2--blog--postWrapper--2--i">
                                                         <FontAwesomeIcon icon={faCalendarAlt} />
                                                     </i>
-                                                    <Moment format="D MMM YYYY" withTitle > {postDate}</Moment>
+                                                    {/* <Moment format="D MMM YYYY" withTitle > {}</Moment> */}
+                                                    <Dates>{postDate}</Dates>
                                                 </span>
                                             </div>
                                             <div className="mainSection__col2--blog--content text-center" dangerouslySetInnerHTML={{ __html: `${content.slice(0, 100)}...` }} />

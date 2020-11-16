@@ -127,6 +127,9 @@
   .footer {
     &__list {
       &--item {
+        &--form {
+          display: block;
+        }
         &--submit {
           display: block;
           background: none;

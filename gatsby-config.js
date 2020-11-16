@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `2EAS Accounting Philippines`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `2EAS Accounting Solution Website`,
     author: `@gatsbyjs`,
     siteUrl: "https://2eas-accounting.netlify.app"
   },

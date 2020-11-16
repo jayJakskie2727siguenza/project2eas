@@ -32,8 +32,7 @@ export default function HTML(props) {
    "@type": "PostalAddress",
    "streetAddress": "21 Apple St, Barangay Dadiangas North",
    "addressLocality": "General Santos City",
-   "addressRegion": "South Cotabato",
-   "postalCode": "9500",
+   "addressRegion": "South Cotabato",   "postalCode": "9500",
    "addressCountry": "Philippines"
  },
  "geo": {
