@@ -3,7 +3,7 @@ module.exports = {
     title: `2EAS Accounting Philippines`,
     description: `2EAS Accounting Solution Website`,
     author: `@gatsbyjs`,
-    siteUrl: "https://2eas-accounting.netlify.app"
+    siteUrl: "https://2eas.ph"
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -16,6 +16,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://2eas.ph`,
       },
     },
     // https://www.googletagmanager.com/gtag/js?id=
@@ -65,8 +71,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://2eas-accounting.netlify.app",
-        sitemap: "https://2eas-accounting.netlify.app/sitemap.xml",
+        host: "https://2eas.ph",
+        sitemap: "https://2eas.ph/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }]
       }
     },
