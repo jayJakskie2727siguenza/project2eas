@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `2EAS Accounting Philippines`,
-    description: `2EAS Accounting Solution Website`,
+    title: `2E Accounting Philippines`,
+    description: `2E Accounting Solution Website`,
     author: `@gatsbyjs`,
     siteUrl: "https://2eas.ph"
   },

@@ -36,6 +36,7 @@ const FinancialPlanning = () => {
         }
     } } = useStaticQuery(getData)
 
+
     return (
         <div className="financialPlanning mb-2">
             <div className="financialPlanning__wrapper">

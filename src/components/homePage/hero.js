@@ -51,7 +51,6 @@ const Hero = () => {
   } = useStaticQuery(getData)
 
 
-
   const getBackgroundImage = {
     backgroundImage: `url(${bgImage})`
     // backgroundImage: "url(../../images/demo-eleven-banner-2.jpg)"
