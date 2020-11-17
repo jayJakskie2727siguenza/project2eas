@@ -114,7 +114,7 @@ const Features1 = () => {
                         {/* Some Reasons to Work Together */}
                     </h2>
                     <div
-                        className="reasons__col1--1 mt-4 dflex justify-content-center align-items-start"
+                        className="reasons__col1--1 mt-4 "
                     >
                         <img
                             src={icon1}
@@ -127,10 +127,8 @@ const Features1 = () => {
                                 {contentSubTitle1 ? contentSubTitle1 : (<span>We Believe in Best Quality(default)</span>)}
                                 {/* We Believe in Best Quality */}
                             </h3>
-                            <p>
-                                {contentDescription1 ? contentDescription1 : (<span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua ut enim ad minim veniam.(default)</span>)}
+                            <p dangerouslySetInnerHTML={{ __html: contentDescription1 }}>
+
                                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                 do eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua ut enim ad minim veniam. */}
@@ -138,7 +136,7 @@ const Features1 = () => {
                         </div>
                     </div>
                     <div
-                        className="reasons__col1--2 mt-4 dflex justify-content-center align-items-start"
+                        className="reasons__col1--2 mt-4 "
                     >
                         <img
                             src={icon2}
@@ -150,16 +148,15 @@ const Features1 = () => {
                                 {contentSubTitle2 ? contentSubTitle2 : (<span>We Believe in Good Relation(default)</span>)}
                                 {/* We Believe in Good Relation */}
                             </h3>
-                            <p>
-                                {contentDescription2 ? contentDescription2 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                                do eiusmod tempor incididunt.(default)</span>)}
+                            <p dangerouslySetInnerHTML={{ __html: contentDescription2 }}>
+
                                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
                                 do eiusmod tempor incididunt. */}
                             </p>
                         </div>
                     </div>
                     <div
-                        className="reasons__col1--3 mt-4 dflex justify-content-center align-items-start"
+                        className="reasons__col1--3 mt-4 "
                     >
                         <img
                             src={icon3}
@@ -171,9 +168,8 @@ const Features1 = () => {
                                 {contentSubTitle3 ? contentSubTitle3 : (<span>We Believe in Abilities(default)</span>)}
                                 {/* We Believe in Abilities */}
                             </h3>
-                            <p>
-                                {contentDescription3 ? contentDescription3 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                                do eiusmod tempor incididunt.(default)</span>)}
+                            <p dangerouslySetInnerHTML={{ __html: contentDescription3 }}>
+
                                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
                                 do eiusmod tempor incididunt. */}
                             </p>

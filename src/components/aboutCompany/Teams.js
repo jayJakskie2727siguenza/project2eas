@@ -4,20 +4,21 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 
 
-const getData = graphql`{
+const getData = graphql`
+{
     wpgraph2eas {
-    teams {
-      nodes {
-        title(format: RENDERED)
-        content(format: RENDERED)
-        featuredImage {
-          sourceUrl
-           altText
+      teams {
+        nodes {
+          title(format: RENDERED)
+          content(format: RENDERED)
+          featuredImage {
+            sourceUrl
+          }
         }
       }
     }
   }
-}`
+`
 
 const Teams = () => {
 

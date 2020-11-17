@@ -5,7 +5,40 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 
 
+const getData = graphql`
+{
+    wpgraph2eas {
+      processitems(first: 100) {
+        arrayNodes: nodes {
 
+          pTitle: title
+          content(format: RENDERED)
+          processitemsImages__acf {
+            nodesTitle:title
+            alternativeText
+            caption
+            description
+            altitude
+            longitude
+            featuredImage {
+              sourceUrl
+            }
+          }
+        }
+      }
+      pageBy(uri: "home") {
+        home_pagesection_acf {
+          sections {
+            process {
+              title
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 
 
@@ -33,38 +66,7 @@ const Process = () => {
             }
         }
 
-    } = useStaticQuery(graphql`
-{
-
-
-
-    wpgraph2eas {
-
-        processitems(first: 100) {
-       arrayNodes:nodes{
-           id
-           pTitle:title
-            content(format: RENDERED)
-            featuredImage {
-                sourceUrl
-                altText
-            }
-       }
-      },
-
-      pageBy(uri: "home") {
-        home_pagesection_acf {
-          sections {
-            process {
-              title
-              description
-            }
-          }
-        }
-      }
-    }
-  }
-`)
+    } = useStaticQuery(getData)
 
 
 
@@ -91,18 +93,33 @@ const Process = () => {
             <div className="process__icon">
                 <div className="process__icon--wrapper process__icon--wrapper--1">
 
-                    {arrayNodes.map((data) => {
+                    {arrayNodes.map(({
+
+                        pTitle,
+                        content,
+                        processitemsImages__acf: {
+                            nodesTitle,
+                            alternativeText,
+                            caption,
+                            description,
+                            altitude,
+                            longitude,
+                            featuredImage: {
+                                sourceUrl
+                            }
+                        }
+                    }, index) => {
 
 
 
                         return (
-                            <div key={data.id} className="process__icon--wrapper--div process__icon--wrapper--div--1">
+                            <div key={index} className="process__icon--wrapper--div process__icon--wrapper--div--1">
                                 <div className="process__icon--wrapper--icon mr-1">
-                                    <img className="process__icon--wrapper--icon--icon" src={data.featuredImage.sourceUrl} alt={data.featuredImage.altText} />
+                                    <img className="process__icon--wrapper--icon--icon" src={sourceUrl} alt={alternativeText} title={nodesTitle} caption={caption} description={description} altitude={altitude} longitude={longitude} />
                                 </div>
                                 <div className="process__icon--wrapper--content ">
-                                    <h3 className="process__icon--wrapper--content--h3">{data.pTitle}</h3>
-                                    <div className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: data.content }} ></div>
+                                    <h3 className="process__icon--wrapper--content--h3">{pTitle}</h3>
+                                    <div className="process__icon--wrapper--content--p" dangerouslySetInnerHTML={{ __html: content }} ></div>
                                 </div>
                             </div>
                         )

@@ -53,10 +53,8 @@ const ProvideSolution = () => {
                     {contentTitle ? contentTitle : (<span>  We Provide Solution on Your Business(default)</span>)}
                     {/* We Provide Solution on Your Business */}
                 </h2>
-                <p className="providedSolution__content--p">
-                    {contentDescription1 ? contentDescription1 : (<span>On the other hand we denounce with righteous indignation and dislike
-                    men who are so beguiled and demoralized by the charms of pleasure of
-                    the moment so blinded by desire that they cannot foresee.(default)</span>)}
+                <p className="providedSolution__content--p" dangerouslySetInnerHTML={{ __html: contentDescription1 }}>
+
                     {/* On the other hand we denounce with righteous indignation and dislike
                     men who are so beguiled and demoralized by the charms of pleasure of
                     the moment so blinded by desire that they cannot foresee. */}
@@ -65,10 +63,8 @@ const ProvideSolution = () => {
                     {contentSubTitle ? contentSubTitle : (<span>What We Do ?(default)</span>)}
                     {/* What We Do ? */}
                 </h3>
-                <p className="providedSolution__content--p">
-                    {contentDescription2 ? contentDescription2 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                    ad minim veniam quis nostrud exercitation.(default)</span>)}
+                <p className="providedSolution__content--p" dangerouslySetInnerHTML={{ __html: contentDescription2 }}>
+
                     {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                     ad minim veniam quis nostrud exercitation. */}

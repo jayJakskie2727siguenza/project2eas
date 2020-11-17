@@ -2,6 +2,21 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: $backgroundShade;
+
+  &__col1 {
+    &--1 {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+    }
+    &--2 {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+    }
+    &--3 {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+    }
+  }
 }
 @media (max-width: 1039px) {
   .reasons {

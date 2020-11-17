@@ -56,7 +56,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={`${title} | ${generalSettingsTitle}`}
 
-      titleTemplate={title ? `%s | ${siteTitle
+      titleTemplate={!title ? `%s | ${siteTitle
         }` : null}
 
       meta={[

@@ -117,32 +117,39 @@ export default class LogoList extends Component {
     render() {
         return <StaticQuery
             query={
+
                 graphql`
-                {
-                    wpgraph2eas {
+  {
+    wpgraph2eas {
+      partnership_lists(first: 100) {
+        nodes {
+          partnershipsImages__acf {
+            partnerShipsTitle:title
+            alternativeText
+            caption
+            description
+            altitude
+            longitude
+            featuredImage {
+              sourceUrl
+            }
+          }
+        }
+      }
+      pageBy(uri: "home") {
+        home_pagesection_acf {
+          sections {
+            logolist {
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
-                        partnership_lists(first: 100) {
-                            nodes {
-                                featuredImage {
-                                    sourceUrl
-                                    altText
-                                   
-                                }
-                            }
-                        },
-
-                        pageBy(uri: "home") {
-                            home_pagesection_acf {
-                                sections {
-                                    logolist {
-                                        title
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                `}
+            }
             render={
                 ({
                     wpgraph2eas: {
@@ -180,11 +187,23 @@ export default class LogoList extends Component {
                                             <div key={index} className={`logolist__wrapper--div1 logolist__wrapper--div ${this.state.opacity === index ? "opacity-show" : "opacity-hide"}`}>
 
                                                 {
-                                                    data.map(({ featuredImage: { sourceUrl, altText } }, index) => {
+                                                    data.map(({
+                                                        partnershipsImages__acf: {
+                                                            partnerShipsTitle,
+                                                            alternativeText,
+                                                            caption,
+                                                            description,
+                                                            altitude,
+                                                            longitude,
+                                                            featuredImage: {
+                                                                sourceUrl
+                                                            }
+                                                        }
+                                                    }, index) => {
 
                                                         return (
                                                             <div key={index} onPointerEnter={this.mouseEnter} onPointerLeave={this.mouseOut} className="logolist__wrapper--div1--imgWrapper logolist__wrapper--div--imgWrapper">
-                                                                <img className="logolist__wrapper--div--imgWrapper--img" src={sourceUrl} alt={altText} />
+                                                                <img className="logolist__wrapper--div--imgWrapper--img" src={sourceUrl} title={partnerShipsTitle} alt={alternativeText} caption={caption} description={description} altitude={altitude} longitude={longitude} />
                                                             </div>
                                                         )
                                                     })
