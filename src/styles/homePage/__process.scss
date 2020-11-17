@@ -1,14 +1,21 @@
 .process {
   margin-top: 4rem;
   margin-bottom: 4rem;
+
+  &__section {
+    &--title {
+      width: 100% !important;
+    }
+  }
+
   &__icon {
     padding: 0px 25px;
 
     &--wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 310px));
-      column-gap: 20px;
-      row-gap: 35px;
+      column-gap: 5px;
+      row-gap: 15px;
       justify-content: center;
       // align-items: center;
 
@@ -27,7 +34,7 @@
       }
 
       &--icon {
-        width: 175px;
+        width: 100%;
         padding-top: 5px;
 
         // height: 80px;
@@ -40,8 +47,9 @@
       }
 
       &--div {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 80px 2fr;
+        column-gap: 20px;
       }
     }
   }

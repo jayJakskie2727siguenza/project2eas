@@ -30,13 +30,13 @@ const FinancialPlanning1 = () => {
 
     const {
         wpgraph2eas: {
-            pageBy: {
-                services_pagesection_acf: {
-                    financialPlanningSection1: {
-                        description
-                    }
-                }
-            },
+            // pageBy: {
+            //     services_pagesection_acf: {
+            //         financialPlanningSection1: {
+            //             description
+            //         }
+            //     }
+            // },
             financialplan_1_lists: {
                 nodes
             }
@@ -48,7 +48,7 @@ const FinancialPlanning1 = () => {
 
     return (
         <div className="financialPlanning1 mb-4 pt-2">
-            <div className="financialPlanning1__div1 pb-3">
+            {/* <div className="financialPlanning1__div1 pb-3">
                 <p>
                     {
                         description ? description : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -59,7 +59,7 @@ const FinancialPlanning1 = () => {
                     nulla pariatur.(default)</span>)
                     }
                 </p>
-            </div>
+            </div> */}
 
             <div className="financialPlanning1__div2 ">
                 <ul className="financialPlanning1__div2--list1  list-unstyled">

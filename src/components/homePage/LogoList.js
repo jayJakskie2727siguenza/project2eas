@@ -173,8 +173,6 @@ export default class LogoList extends Component {
                     return (
                         <section className="logolist__wrapper container  my-2">
 
-
-
                             <h2 className="logolist__wrapper--h2 text-center  mb-2">
                                 {title ? title : (<span>OTHER XERO ADD-ON WE RECOMMEND FOR YOUR BUSINESS(default)</span>)}
                             </h2>

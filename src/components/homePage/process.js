@@ -76,17 +76,15 @@ const Process = () => {
         <section className={`process container`}>
 
 
-
-
             <div className="section__title">
-                <h2 className="section__title--heading">
+                <h2 className="section__title--heading process__section--title">
                     {title ? title : (<span>What Do We Do?(default)</span>)}
                     {/* What Do We Do? */}
                 </h2>
-                <p className="section__title--subheading">
-                    {description ? description : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+                <p className="section__title--subheading" dangerouslySetInnerHTML={{ __html: description }}>
+                    {/* {description ? description : (<span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
                     tempor incididunt ut labore et dolore. On the other hand we denounce
-                    with righteous.(default)</span>)}
+                    with righteous.(default)</span>)} */}
 
                 </p>
             </div>
@@ -114,7 +112,7 @@ const Process = () => {
 
                         return (
                             <div key={index} className="process__icon--wrapper--div process__icon--wrapper--div--1">
-                                <div className="process__icon--wrapper--icon mr-1">
+                                <div className="process__icon--wrapper--icon ">
                                     <img className="process__icon--wrapper--icon--icon" src={sourceUrl} alt={alternativeText} title={nodesTitle} caption={caption} description={description} altitude={altitude} longitude={longitude} />
                                 </div>
                                 <div className="process__icon--wrapper--content ">

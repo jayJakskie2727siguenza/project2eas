@@ -25,6 +25,7 @@ const getData = graphql`
                     siteMetaTitle
                     siteMetaDescription
                 }
+                title(format: RENDERED)
     },
     
     posts {
@@ -54,7 +55,8 @@ const BlogStyle = () => {
                 page_seo_acf: {
                     siteMetaTitle,
                     siteMetaDescription
-                }
+                },
+                title
             },
 
             posts: {
@@ -69,7 +71,7 @@ const BlogStyle = () => {
     return (
         <Layout>
             <SEO title={siteMetaTitle} description={siteMetaDescription} />
-            <Banner title={siteMetaTitle} />
+            <Banner title={title} />
             <section className="mainSection container">
                 <div className="mainSection--1 dflex px-1">
                     <div className="mainSection__col2">

@@ -2,6 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 // import Image from '../image'
 import Features from './features'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
@@ -90,16 +92,20 @@ const Benefits = () => {
 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.(default)</span>)} */}
 
                     </p>
-                    <button className="btn btn-primary my-1">
-                        {
-                            button ? button : <span>LEARN ABOUT THE INDUSTRIES WE PROVIDE(default)</span>
-                        }
 
-                        {/* LEARN ABOUT THE INDUSTRIES WE PROVIDE */}
-                        <i className="fa-long-arrow-right benefits__content--right--i">
-                            <FontAwesomeIcon icon={faLongArrowAltRight} />
-                        </i>
-                    </button>
+                    <AniLink to="/contactPage">
+                        <button className="btn btn-primary my-1">
+                            {
+                                button ? button : <span>LEARN ABOUT THE INDUSTRIES WE PROVIDE(default)</span>
+                            }
+
+                            {/* LEARN ABOUT THE INDUSTRIES WE PROVIDE */}
+                            <i className="fa-long-arrow-right benefits__content--right--i">
+                                <FontAwesomeIcon icon={faLongArrowAltRight} />
+                            </i>
+                        </button>
+                    </AniLink>
+
                 </div>
             </div>
         </section>

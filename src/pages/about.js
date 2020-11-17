@@ -15,6 +15,7 @@ const data = graphql`{
         siteMetaTitle
         siteMetaDescription
       }
+       title(format: RENDERED)
       }
     }
   }`
@@ -25,13 +26,14 @@ const AboutCompany = () => {
       page_seo_acf: {
         siteMetaTitle,
         siteMetaDescription
-      }
+      },
+      title
     }
   } } = useStaticQuery(data)
   return (
     <Layout>
       <SEO title={siteMetaTitle} description={siteMetaDescription} />
-      <Banner title={siteMetaTitle} />
+      <Banner title={title} />
       <ProvideSolution />
       <Features />
       <Status />

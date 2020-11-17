@@ -7,7 +7,7 @@ import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
 
-import { Banner, QuickContact, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning2, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
+import { Banner, QuickContact, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
 
 
 const getData = graphql`
@@ -18,6 +18,7 @@ const getData = graphql`
                     siteMetaTitle
                     siteMetaDescription
                 }
+                title(format: RENDERED)
         }
     }
 }
@@ -31,7 +32,8 @@ const FinancialPlanningPage = () => {
                 page_seo_acf: {
                     siteMetaTitle,
                     siteMetaDescription
-                }
+                },
+                title
             }
         }
     } = useStaticQuery(getData)
@@ -39,7 +41,7 @@ const FinancialPlanningPage = () => {
     return (
         <Layout>
             <SEO title={siteMetaTitle} description={siteMetaDescription} />
-            <Banner title={siteMetaTitle} />
+            <Banner title={title} />
             <section className="main container pt-6 pb-6 dflex justify-content-center">
                 <div className="col1 pr-1">
                     <QuickContact />
@@ -49,7 +51,6 @@ const FinancialPlanningPage = () => {
                     <FinancialPlanning />
                     <ServicesOnline />
                     <FinancialPlanning1 />
-                    <FinancialPlanning2 />
                     <FinancialPlanning3 />
                 </div>
             </section>

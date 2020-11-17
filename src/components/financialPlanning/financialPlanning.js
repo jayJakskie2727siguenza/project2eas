@@ -30,7 +30,7 @@ const FinancialPlanning = () => {
                     title,
                     description1,
                     description2,
-                    description3
+                    // description3
                 }
             }
         }
@@ -66,7 +66,7 @@ const FinancialPlanning = () => {
                         }
                     </p>
                 </div>
-                <div className="financialPlanning__wrapper--div3 pb-3">
+                {/* <div className="financialPlanning__wrapper--div3 pb-3">
                     <p className="financialPlanning__wrapper--div3--p">
                         {
                             description3 ? description3 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -76,7 +76,7 @@ const FinancialPlanning = () => {
                         irure dolor in reprehenderit in voluptate.(default)</span>)
                         }
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     )
