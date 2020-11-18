@@ -7,7 +7,7 @@ import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
 
-import { Banner, QuickContact, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
+import { Banner, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
 
 
 const getData = graphql`
@@ -43,10 +43,10 @@ const FinancialPlanningPage = () => {
             <SEO title={siteMetaTitle} description={siteMetaDescription} />
             <Banner title={title} />
             <section className="main container pt-6 pb-6 dflex justify-content-center">
-                <div className="col1 pr-1">
+                {/* <div className="col1 pr-1">
                     <QuickContact />
 
-                </div>
+                </div> */}
                 <div className="col2 mt-3 ml-2 px-1">
                     <FinancialPlanning />
                     <ServicesOnline />

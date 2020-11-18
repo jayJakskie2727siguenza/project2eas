@@ -17,7 +17,7 @@ const getData = graphql`
         },
         financialplan_1_lists(first: 20) {
             nodes {
-               listTitle: title
+               listTitle: title(format: RENDERED)
                id
             }
         }
@@ -62,13 +62,14 @@ const FinancialPlanning1 = () => {
             </div> */}
 
             <div className="financialPlanning1__div2 ">
+                <h2 className="contentTitle--title mb-3">Accounting & Taxation Solutions</h2>
                 <ul className="financialPlanning1__div2--list1  list-unstyled">
                     {
                         nodes.map(data => {
                             return (
                                 <li key={data.id} className="financialPlanning1__div2--list--item ">
                                     <i className="pr-1"><FontAwesomeIcon icon={faCaretRight} /></i>
-                                    {data.listTitle}
+                                    <span dangerouslySetInnerHTML={{ __html: data.listTitle }} />
                                 </li>
                             )
                         })

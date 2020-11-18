@@ -11,7 +11,7 @@ const getData = graphql`
           title
           description1
           description2
-          description3
+        
         }
       }
     }
@@ -29,8 +29,7 @@ const FinancialPlanning = () => {
                 financialPlanningSection: {
                     title,
                     description1,
-                    description2,
-                    // description3
+                    description2
                 }
             }
         }
@@ -66,17 +65,7 @@ const FinancialPlanning = () => {
                         }
                     </p>
                 </div>
-                {/* <div className="financialPlanning__wrapper--div3 pb-3">
-                    <p className="financialPlanning__wrapper--div3--p">
-                        {
-                            description3 ? description3 : (<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                        irure dolor in reprehenderit in voluptate.(default)</span>)
-                        }
-                    </p>
-                </div> */}
+
             </div>
         </div>
     )

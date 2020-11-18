@@ -50,11 +50,12 @@ module.exports = {
         // Url to query from
         // url: "http://2easmain.local/graphql",
         url: "https://2eas-629268.ingress-baronn.easywp.com/graphql/",
-        refetchInterval: 50
+        refetchInterval: 60
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
 
     {
       resolve: `gatsby-plugin-manifest`,

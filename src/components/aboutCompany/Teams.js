@@ -16,6 +16,13 @@ const getData = graphql`
           }
         }
       }
+      pageBy(uri: "about") {
+      aboutus_pagesection_acf {
+        teamSection {
+          title
+        }
+      }
+    }
     }
   }
 `
@@ -26,6 +33,13 @@ const Teams = () => {
         wpgraph2eas: {
             teams: {
                 nodes
+            },
+            pageBy: {
+                aboutus_pagesection_acf: {
+                    teamSection: {
+                        title
+                    }
+                }
             }
         }
     } = useStaticQuery(getData)
@@ -33,6 +47,9 @@ const Teams = () => {
 
     return (
         <section className="teams container">
+
+            <h2 className="teams__h2">{title}</h2>
+
             <div className="teams__wrapper">
                 <ul className="teams__wrapper--ul ">
 
