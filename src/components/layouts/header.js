@@ -39,38 +39,7 @@ export class Header extends Component {
 
         <div className="topNav">
 
-          {/* <nav className={this.state.checking ? "nav1 opacityShow" : "nav1 opacityHide"}>
-            <div className={this.state.checking ? "nav1__div dflex showNav" : "nav1__div dflex hideNav"}>
-              <ul
-                className="nav1__div--list list-unstyled dflex mr-4 pt-4"
-              >
-                <li className="nav1__div--list--item">
-                  <AniLink cover bg="#f4f4f4" duration={0.7} direction="up" to="/" >
-                    <span className="nav1__div--list--item--link">Home</span>
 
-                  </AniLink>
-
-                </li>
-                <li className="nav1__div--list--item">
-                  <AniLink fade to="/about" className="nav1__div--list--item--link">About Us</AniLink>
-
-                </li>
-                <li className="nav1__div--list--item">
-                  <AniLink fade to="/financial-Planning" className="nav1__div--list--item--link">Services</AniLink>
-
-                </li>
-                <li className="nav1__div--list--item">
-                  <AniLink fade to="/News" className="nav1__div--list--item--link">News</AniLink>
-
-                </li>
-                <li className="nav1__div--list--item">
-                  <AniLink fade to="/contactPage" className="nav1__div--list--item--link">Contact</AniLink>
-
-                </li>
-
-              </ul>
-            </div>
-          </nav> */}
           <div
             className="container dflex justify-content-between align-items-center py-1"
           >
@@ -124,7 +93,7 @@ export class Header extends Component {
                 </li>
 
                 <li className="nav__menu--list--item">
-                  <AniLink fade to="https://login.xero.com/">Login to Xero</AniLink>
+                  <a href="https://login.xero.com/">Login to Xero</a>
                 </li>
                 <li className="nav__menu--list--item">
 

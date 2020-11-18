@@ -113,6 +113,37 @@ const Footer = () => {
     })
   }
 
+  const formattingCellphone = (num) => {
+    let number = num.toString()
+    let result = "+"
+    // + 63 - 9465728674
+    for (let i in number) {
+
+      if (result.length === 3) {
+
+        result += "-"
+        result += number[i]
+
+      } else if (result.length === 7) {
+        result += "-"
+        result += number[i]
+      } else if (result.length === 11) {
+        result += "-"
+        result += number[i]
+      } else {
+        result += number[i]
+      }
+
+
+    }
+
+    return result
+
+
+  }
+
+
+
   return (
     <section>
 
@@ -194,7 +225,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faPhoneAlt} />
                 </i> <a href="tel:(083) 227-1227" className="footer__list--item--a">
                     {
-                      addTel ? addTel : (<span>(083) 227-1227 (default)</span>)
+                      addTel ? `(083) ${addTel}` : (<span>(083) 227-1227 (default)</span>)
                     }
                   </a> </p>
               </li>
@@ -202,8 +233,8 @@ const Footer = () => {
                 <p><i className="fas fa-mobile-alt mr-1">
                   <FontAwesomeIcon icon={faMobileAlt} />
                 </i> <a href="tel:+63 917 421 9688" className="footer__list--item--a">
-                    +{
-                      addCell ? addCell : (<span>63 917 421 9688 (default)</span>)
+                    {
+                      addCell ? `${formattingCellphone(addCell)}` : (<span>63 917 421 9688 (default)</span>)
                     }
                   </a> </p>
               </li>
