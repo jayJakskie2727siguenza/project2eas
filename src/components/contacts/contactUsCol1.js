@@ -6,7 +6,7 @@ import React from 'react'
 
 const ContactUsCol1 = () => {
 
-    const formspree = "https://formspree.io/f/xoqpworz"
+    const formspree = "https://formspree.io/projects/1560816072481832146"
 
     const [contact, setContact] = React.useState({
         FullName: "",

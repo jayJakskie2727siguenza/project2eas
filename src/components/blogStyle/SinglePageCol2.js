@@ -65,7 +65,7 @@ const SinglePageCol2 = () => {
                     {
                         nodes.map((data, index) => {
 
-
+                            
 
                             return (
 

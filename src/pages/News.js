@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'gatsby'
-// import Moment from 'react-moment'
+import Moment from 'react-moment'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -87,7 +87,7 @@ const BlogStyle = () => {
                                     altText
                                 } }) => {
 
-
+                                const dateToFormat = new Date(postDate)
 
                                 return (
 
@@ -124,8 +124,8 @@ const BlogStyle = () => {
                                                     <i className="mainSection__col2--blog--postWrapper--2--i">
                                                         <FontAwesomeIcon icon={faCalendarAlt} />
                                                     </i>
-                                                    {/* {postDate ? <Moment format="MMMM DD,YYYY">{postDate} </Moment> : ""} */}
-                                                    {postDate}
+                                                    {postDate ? <Moment format="YYYY - MMMM - DD"  >{dateToFormat}</Moment> : ""}
+                                                    {/* {postDate} */}
                                                 </span>
                                             </div>
                                             <div className="mainSection__col2--blog--content text-center" dangerouslySetInnerHTML={{ __html: `${content.slice(0, 100)}...` }} />
