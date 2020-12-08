@@ -7,7 +7,7 @@ import Layout from "../components/layouts/layout"
 import MainFooter from '../components/layouts/Mainfooter'
 import SEO from "../components/seo"
 
-import { Banner, FinancialPlanning, ServicesOnline, FinancialPlanning1, FinancialPlanning3 } from '../components/financialPlanning/financialPlanningMain'
+import { Banner, FinancialPlanning, ServicesOnline, FinancialPlanning1 } from '../components/financialPlanning/financialPlanningMain'
 
 
 const getData = graphql`
@@ -51,7 +51,7 @@ const FinancialPlanningPage = () => {
                     <FinancialPlanning />
                     <ServicesOnline />
                     <FinancialPlanning1 />
-                    <FinancialPlanning3 />
+
                 </div>
             </section>
             <MainFooter />
