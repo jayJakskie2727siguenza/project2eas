@@ -83,10 +83,10 @@ export class Header extends Component {
                   <AniLink fade to="/financial-Planning" className="nav__menu--list--item--link">Services</AniLink>
 
                 </li>
-                <li className="nav__menu--list--item">
+                {/* <li className="nav__menu--list--item">
                   <AniLink fade to="/News" className="nav__menu--list--item--link">News</AniLink>
 
-                </li>
+                </li> */}
                 <li className="nav__menu--list--item">
                   <AniLink fade to="/contactPage" className="nav__menu--list--item--link">Contact</AniLink>
 

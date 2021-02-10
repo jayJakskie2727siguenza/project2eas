@@ -48,8 +48,8 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraph2eas",
         // Url to query from
-        // url: "http://2easmain.local/graphql",
-        url: "https://2eas-629268.ingress-baronn.easywp.com/graphql/",
+        url: "http://2easmain.local/graphql",
+        // url: "https://2eas-629268.ingress-baronn.easywp.com/graphql/",
         refetchInterval: 60
       },
     },

@@ -87,7 +87,6 @@ const Blog = () => {
         {
           nodes.map(({
             projectTitle,
-            content,
             projectoverviewsImages__acf: {
               nodesTitle,
               alternativeText,
@@ -104,16 +103,12 @@ const Blog = () => {
             return (
               <div key={index} className="blog__list--item">
                 <div className="blog__list--item--contentWrapper">
-                  <h3 className="blog__list--item--title px-3 pt-3 pb-1">
+                  <h3 className="blog__list--item--title px-3 py-1">
                     {
                       projectTitle ? projectTitle : <span>INVENTORY MANAGEMENT</span>
                     }
                   </h3>
-                  <p className="blog__list--item--description px-3 pb-3" dangerouslySetInnerHTML={{ __html: content }}>
-                    {/* {
-                      content ? content : <span>Business Consultancy Corporate</span>
-                    } */}
-                  </p>
+
                 </div>
                 <div className="blog__list--item--imgWrapper">
                   <img

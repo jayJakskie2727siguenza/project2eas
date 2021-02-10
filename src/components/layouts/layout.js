@@ -15,7 +15,7 @@ import Footer from './footer'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faBars, faHome, faUsers, faConciergeBell, faIdCard } from '@fortawesome/free-solid-svg-icons'
-import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
+// import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 
 const Layout = ({ children }) => {
 
@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
 
             </li>
           </AniLink>
-          <AniLink fade to="/News" className="topNav__menuList--ul--li--a">
+          {/* <AniLink fade to="/News" className="topNav__menuList--ul--li--a">
             <li className="topNav__menuList--ul--li">
               <div className="topNav__menuList--ul--li--iconWrapper">
 
@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
               <span>News</span>
 
             </li>
-          </AniLink>
+          </AniLink> */}
           <AniLink fade to="/contactPage" className="topNav__menuList--ul--li--a">
             <li className="topNav__menuList--ul--li">
               <div className="topNav__menuList--ul--li--iconWrapper">
