@@ -6,11 +6,6 @@ import logoImage from '../../images/2EAS-LOGO-Horizontal-Website.png'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 
-
-
-
-
-
 export class Header extends Component {
 
   state = {
