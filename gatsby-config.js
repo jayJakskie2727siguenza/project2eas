@@ -3,7 +3,7 @@ module.exports = {
     title: `2E Accounting Philippines`,
     description: `2E Accounting Solution Website`,
     author: `@gatsbyjs`,
-    siteUrl: "https://2eas.ph"
+    siteUrl: "https://2eas.ph",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -30,13 +30,14 @@ module.exports = {
       options: {
         trackingId: "UA-182860121-1",
         head: true,
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     {
-      resolve: 'gatsby-plugin-mailchimp',
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: 'https://gmail.us2.list-manage.com/subscribe/post?u=1fcede93033feb606b544f0b2&amp;id=e9854fd5f3', // string; add your MC list endpoint here; see instructions below
+        endpoint:
+          "https://gmail.us2.list-manage.com/subscribe/post?u=1fcede93033feb606b544f0b2&amp;id=e9854fd5f3", // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
@@ -48,15 +49,13 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraph2eas",
         // Url to query from
-        // url: "http://2easmain.local/graphql",
+        // url: "http://project2eas.local/graphql",
         url: "https://2eas-629268.ingress-baronn.easywp.com/graphql/",
-        refetchInterval: 60
+        refetchInterval: 60,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -74,11 +73,9 @@ module.exports = {
       options: {
         host: "https://2eas.ph",
         sitemap: "https://2eas.ph/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }]
-      }
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
-
-
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -90,11 +87,9 @@ module.exports = {
           `/financial-Planning/`,
           `/contactPage/`,
           `/about/`,
-          `/404/`
-        ]
-      }
+          `/404/`,
+        ],
+      },
     },
-
-
   ],
 }
