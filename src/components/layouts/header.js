@@ -21,15 +21,15 @@ export class Header extends Component {
     return (
       <header>
         <div className="topNav">
-          <div className="container dflex justify-content-between align-items-center py-1">
+          <div className="container dflex justify-content-center align-items-center py-1">
             <div className="topNav__help dflex justify-content-start align-items-center">
               <p className="topNav__needhelp mr-2">
                 We offer 50% OFF on Migration or Installation Fee for Accounting
                 & Taxation Systems Subscription!{" "}
               </p>
-              <p className="topNav__contact">
+              {/* <p className="topNav__contact">
                 <a href="tel:(083) 227-1227">(083) 227-1227</a>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

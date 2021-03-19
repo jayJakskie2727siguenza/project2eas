@@ -11,54 +11,41 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-
   const {
     wpgraph2eas: {
-      allSettings: {
-        generalSettingsTitle
-      }
+      allSettings: { generalSettingsTitle },
     },
     site: {
-      siteMetadata: {
-        siteTitle,
-        siteDes,
-        siteAuthor
-      }
-    }
+      siteMetadata: { siteTitle, siteDes, siteAuthor },
+    },
   } = useStaticQuery(
     graphql`
       query {
         wpgraph2eas {
-      allSettings {
-        generalSettingsTitle
-      }
-    },
-        site {
-          siteMetadata {
-            siteTitle:title
-            siteDes:description
-            siteAuthor:author
+          allSettings {
+            generalSettingsTitle
           }
         }
-      },
-      
+        site {
+          siteMetadata {
+            siteTitle: title
+            siteDes: description
+            siteAuthor: author
+          }
+        }
+      }
     `
   )
 
   const metaDescription = description || siteDes
-
-
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={`${title} | ${generalSettingsTitle}`}
-
-      titleTemplate={!title ? `%s | ${siteTitle
-        }` : null}
-
+      title={`${title}  ${generalSettingsTitle}`}
+      titleTemplate={!title ? `%s | ${siteTitle}` : null}
       meta={[
         {
           name: `description`,
